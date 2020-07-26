@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".WeekDaysFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/word_root"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/white_box"
+                    app:cardCornerRadius="8dp">
+
+
+                    <RelativeLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@drawable/white_box"
+
+
+                        >
+
+
+                        <TextView
+                            android:id="@+id/tv_word_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="false"
+                            android:layout_centerHorizontal="true"
+                            android:layout_margin="16dp"
+                            android:text="Title 1"
+                            android:textColor="@android:color/black"
+                            android:textSize="22sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tv_definition_word"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tv_word_title"
+                            android:layout_centerInParent="false"
+                            android:layout_margin="16dp"
+                            android:text="Long defination."
+                            android:textColor="@android:color/black"
+                            android:textSize="18sp"
+                            android:visibility="invisible" />
+
+
+                        <Button
+                            android:id="@+id/i_know_button"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tv_definition_word"
+                            android:background="@drawable/white_box_rectangle"
+                            android:backgroundTint="#F1EEEE"
+                            android:elevation="0dp"
+                            android:text="I Know ->"
+                            android:textSize="12sp"
+                            android:visibility="invisible" />
+
+                        <Button
+                            android:id="@+id/i__dont_know_button"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/i_know_button"
+                            android:background="@drawable/white_box"
+                            android:backgroundTint="#F1EEEE"
+                            android:elevation="0dp"
+                            android:text=" No I don't Know ->"
+                            android:textSize="12sp"
+                            android:visibility="invisible"
+
+                            />
+
+                        <Button
+                            android:id="@+id/reveal_button"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/i__dont_know_button"
+                            android:background="@drawable/white_box"
+                            android:backgroundTint="#F1EEEE"
+                            android:elevation="0dp"
+                            android:text="Tap to see definition ->"
+                            android:textSize="12sp"
+
+
+                            />
+
+
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/progress_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/word_root"
+
+                >
+
+                <TextView
+                    android:id="@+id/tv_progress_master"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:text=" You have mastered 0 out of 50"
+                    android:textColor="@android:color/black" />
+
+                <ProgressBar
+                    android:id="@+id/progressbar_master"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_progress_master"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@android:color/darker_gray"
+                    android:indeterminate="false"
+                    android:max="50"
+                    android:maxWidth="10dp"
+                    android:min="1"
+                    android:minWidth="0dp"
+                    android:outlineProvider="none"
+
+
+                    android:progressDrawable="@drawable/green_progress"
+
+                    />
+
+                <TextView
+                    android:id="@+id/review_progress_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/progressbar_master"
+                    android:layout_marginLeft="16dp"
+
+                    android:text=" You are reviewing 0 out of 50"
+                    android:textColor="@android:color/black" />
+
+                <ProgressBar
+                    android:id="@+id/progressbar_review"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/review_progress_tv"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@android:color/darker_gray"
+                    android:indeterminate="false"
+                    android:max="50"
+                    android:maxWidth="10dp"
+                    android:min="1"
+                    android:minWidth="0dp"
+                    android:outlineProvider="none"
+                    android:progressDrawable="@drawable/green_progress"
+
+                    />
+
+                <TextView
+                    android:id="@+id/learning_progress_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/progressbar_review"
+                    android:layout_marginLeft="16dp"
+
+                    android:text=" You are learning 0 out of 50"
+                    android:textColor="@android:color/black"
+
+                    />
+
+                <ProgressBar
+                    android:id="@+id/progressbar_learning"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/learning_progress_tv"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@android:color/darker_gray"
+                    android:indeterminate="false"
+                    android:max="50"
+                    android:maxWidth="10dp"
+                    android:min="1"
+
+                    android:minWidth="0dp"
+                    android:outlineProvider="none"
+                    android:progressDrawable="@drawable/green_progress"
+
+                    />
+                <TextView
+                    android:id="@+id/tv_word_tag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="false"
+                    android:layout_margin="16dp"
+                    android:text="Title 1"
+                    android:layout_below="@id/progressbar_learning"
+                    android:textColor="@android:color/black"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:layout_centerHorizontal="true"/>
+
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

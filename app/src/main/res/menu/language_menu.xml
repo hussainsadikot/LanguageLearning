@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+        <item android:id="@+id/language_selection_item_in_menu"
+            android:icon="@drawable/ic_language_24dp"
+            android:title="Language Selection"
+             app:showAsAction="always"/>
+    <item android:id="@+id/item_1"
+        android:icon="@mipmap/ic_launcher"
+        android:title="@string/app_name"
+        app:showAsAction="never"/>
+</menu>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/nav_profile"
+            android:icon="@drawable/ic_person_white_24dp"
+            android:title="Profile"/>
+        <item android:id="@+id/nav_lang_selection"
+            android:icon="@drawable/ic_language_24dp"
+            android:title="Select Language"/>
+    </group>
+    <item android:title="Communicate">
+        <menu>
+            <item android:id="@+id/nam_share"
+                android:icon="@drawable/ic_share"
+                android:title="Share App"/>
+        </menu>
+    </item>
+</menu>
