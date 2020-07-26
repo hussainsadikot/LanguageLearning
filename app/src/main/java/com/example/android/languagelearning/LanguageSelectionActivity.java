@@ -5,9 +5,12 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -19,15 +22,15 @@ import java.util.ArrayList;
 import java.util.Locale;
 
 public class LanguageSelectionActivity extends AppCompatActivity {
-
+    Locale myLocale;
     private ListView listViewLanguageSelection;
-    private ArrayList<String> arrayListLanguages = new ArrayList<>();
+    public final ArrayList<String> arrayListLanguages = new ArrayList<>();
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //        loadlocale();
+//                loadlocale();
         setContentView(R.layout.activity_language_selection);
         //        //change actionbar title
 //       ActionBar actionBar  = getSupportActionBar();
@@ -61,34 +64,44 @@ public class LanguageSelectionActivity extends AppCompatActivity {
         listViewLanguageSelection.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                if(i==0){
+                    setLocale("en");
+                    recreate();
+                }
+                if(i==1){
+                    setLocale("hi");
+                    recreate();
+                }
+
+
 //                switch(i){
 //                    case 0: setLocale("en");
 //                            recreate();
-//                    case 1: setLocale("hn");
+//                    case 1: setLocale("hi");
 //                            recreate();
 //                    case 2: setLocale("ml");
 //                            recreate();
 //                    case 3: setLocale("gj");
 //                            recreate();
 //                    default:setLocale("en");
+////
+////
+//                }
+//                switch(i){
+//                    case 0:
+//                        Toast.makeText(LanguageSelectionActivity.this, "English", Toast.LENGTH_SHORT).show();
+//                        break;
+//                    case 1: Toast.makeText(LanguageSelectionActivity.this, "Hindi", Toast.LENGTH_SHORT).show();
+//                        break;
+//                    case 2: Toast.makeText(LanguageSelectionActivity.this, "Malayalam", Toast.LENGTH_SHORT).show();
+//                        break;
+//                    case 3: Toast.makeText(LanguageSelectionActivity.this, "Gujarati", Toast.LENGTH_SHORT).show();
+//                        break;
+//                    default:Toast.makeText(LanguageSelectionActivity.this, "English", Toast.LENGTH_SHORT).show();
+//
 //
 //
 //                }
-                switch(i){
-                    case 0:
-                        Toast.makeText(LanguageSelectionActivity.this, "English", Toast.LENGTH_SHORT).show();
-                        break;
-                    case 1: Toast.makeText(LanguageSelectionActivity.this, "Hindi", Toast.LENGTH_SHORT).show();
-                        break;
-                    case 2: Toast.makeText(LanguageSelectionActivity.this, "Malayalam", Toast.LENGTH_SHORT).show();
-                        break;
-                    case 3: Toast.makeText(LanguageSelectionActivity.this, "Gujarati", Toast.LENGTH_SHORT).show();
-                        break;
-                    default:Toast.makeText(LanguageSelectionActivity.this, "English", Toast.LENGTH_SHORT).show();
-
-
-
-                }
             }
         });
 
@@ -99,15 +112,20 @@ public class LanguageSelectionActivity extends AppCompatActivity {
 
     }
     private void setLocale(String language) {
-        Locale locale = new Locale(language);
-        Locale.setDefault(locale);
-        Configuration config = new Configuration();
-        config.locale = locale;
-        getBaseContext().getResources().updateConfiguration(config,getBaseContext().getResources().getDisplayMetrics());
+         myLocale = new Locale(language);
+        Locale.setDefault(myLocale);
+        Resources res = getResources();
+        DisplayMetrics dm = res.getDisplayMetrics();
+        Configuration config = res.getConfiguration();
+        config.locale = myLocale;
+        res.updateConfiguration(config,dm);
+        Intent intent = new Intent(this,MainActivity.class);
+        startActivity(intent);
+//        getBaseContext().getResources().updateConfiguration(config,getBaseContext().getResources().getDisplayMetrics());
         //save data to shared preferences
-        SharedPreferences.Editor editor = getSharedPreferences("Settings",MODE_PRIVATE).edit();
-        editor.putString("My_Lang",language);
-        editor.apply();
+//        SharedPreferences.Editor editor = getSharedPreferences("Settings",MODE_PRIVATE).edit();
+//        editor.putString("My_Lang",language);
+//        editor.apply();
 
     }
     //load language saved inshared preferences

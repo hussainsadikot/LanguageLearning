@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">" भाषा सीखना"</string>
+    <string name="select_language_string">पसंदीदा भाषा का चयन करें</string>
+    <string name="open_drawer">दराज खोलें</string>
+    <string name="close_drawer">दराज को बंद करें</string>
+    <string name="hello_blank_fragment">हैलो खाली टुकड़ा</string>
+    <string name="drawer_title">त्रिभाषी</string>
+</resources>

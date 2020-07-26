@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         ActionBarDrawerToggle toggle1 = new ActionBarDrawerToggle(this, drawerLayout, toolbarMain, R.string.open_drawer, R.string.close_drawer);
         drawerLayout.addDrawerListener(toggle1);
         toggle1.syncState();
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         navigationViewMain = findViewById(R.id.nav_view_main);
         navigationViewMain.setNavigationItemSelectedListener(this);
@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         topics.add(new Topics(0, "Names of Week Days", "0 of 7  words mastered"));
-        topics.add(new Topics(1, "Geography and places", "0 of 50  words mastered"));
+        topics.add(new Topics(1, "Names of Months", "0 of 12  words mastered"));
         topics.add(new Topics(2, "Health and fitness", "0 of 50  words mastered"));
         topics.add(new Topics(3, "History and events", "0 of 50  words mastered"));
         topics.add(new Topics(4, "Natural sciences and nature", "0 of 50  words mastered"));
@@ -101,7 +101,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(i);
                 break;
             case 2:
-                i.putExtra("array", "Geography and places");
+                i.putExtra("array", "Names of Months");
                 startActivity(i);
                 break;
 //            case 3:

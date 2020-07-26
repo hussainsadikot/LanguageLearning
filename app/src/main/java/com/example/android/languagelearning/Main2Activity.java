@@ -34,7 +34,8 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
 
 
     public String x=null;
-
+    public FragmentManager fm = getSupportFragmentManager();
+    public FragmentTransaction ft = fm.beginTransaction();
 
 
 
@@ -53,10 +54,12 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
         if(x!=null){
             switch (x) {
                 case ("Name of Week Days"):
-                    Fragment fragment = new WeekDaysFragment();
-                    FragmentManager fm = getSupportFragmentManager();
-                    FragmentTransaction ft = fm.beginTransaction();
-                    ft.replace(R.id.fragment_container,fragment).commit();
+                    Fragment weekDaysFragment = new WeekDaysFragment();
+                    ft.replace(R.id.fragment_container,weekDaysFragment).commit();
+                    break;
+                case ("Names of Months"):
+                    Fragment monthsFragment = new MonthsFragment();
+                    ft.replace(R.id.fragment_container,monthsFragment).commit();
                     break;
             }
         }

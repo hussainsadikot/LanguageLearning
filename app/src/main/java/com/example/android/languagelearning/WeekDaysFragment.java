@@ -53,23 +53,36 @@ public class WeekDaysFragment extends Fragment {
         for (int i = 0; i <= words.length - 1; i++) {
             map.put(words[i], mTag);
         }
+        // Master Progress Initial Settings
         progressBarMaster = view.findViewById(R.id.progressbar_master);
         tvProgressMaster = view.findViewById(R.id.tv_progress_master);
+        tvProgressMaster.setText("You have Mastered 0 out of 07");
         progressBarMaster.setProgress(0);
+        progressBarMaster.setMax(7);
+
+        // Learning Progress Initial Settings
         progressBarLearning = view.findViewById(R.id.progressbar_learning);
         progressBarLearning.setProgress(0);
-        progressBarReview = view.findViewById(R.id.progressbar_review);
-        tvProgressReview = view.findViewById(R.id.review_progress_tv);
+        progressBarLearning.setMax(7);
 
         tvProgressLearning = view.findViewById(R.id.learning_progress_tv);
+        tvProgressLearning.setText("You have learn 0 out of 07");
+
+        // Review Progress Initial Settings
+        progressBarReview = view.findViewById(R.id.progressbar_review);
+        progressBarReview.setMax(7);
+        tvProgressReview = view.findViewById(R.id.review_progress_tv);
+        tvProgressReview.setText("You have review 0 out of 07");
+
+
         textView_title = view.findViewById(R.id.tv_word_title);
         textView_definition = view.findViewById(R.id.tv_definition_word);
         reveal = view.findViewById(R.id.reveal_button);
         idont = view.findViewById(R.id.i__dont_know_button);
         iknow = view.findViewById(R.id.i_know_button);
         textView_definition.setVisibility(View.GONE);
-        idont.setVisibility(View.INVISIBLE);
-        iknow.setVisibility(View.INVISIBLE);
+        idont.setVisibility(View.GONE);
+        iknow.setVisibility(View.GONE);
 
         reveal.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -155,7 +168,7 @@ public class WeekDaysFragment extends Fragment {
                 int currentLearningProgress1 = progressBarLearning.getProgress() + 1;
                 progressBarLearning.setProgress(currentLearningProgress1);
                 String curruntprogressnumberforLearningglobalToLearning = Integer.toString(progressBarLearning.getProgress());
-                String globalToLearning = " You are learning " + curruntprogressnumberforLearningglobalToLearning + " out of 50";
+                String globalToLearning = " You are learning " + curruntprogressnumberforLearningglobalToLearning + " out of 07";
                 tvProgressLearning.setText(globalToLearning);
 
             }
@@ -170,14 +183,14 @@ public class WeekDaysFragment extends Fragment {
                 int currentMasterProgress1 = progressBarMaster.getProgress() - 1;
                 progressBarMaster.setProgress(currentMasterProgress1);
                 String curruntprogressnumberforMasterMasterToLearning = Integer.toString(progressBarMaster.getProgress());
-                String MasterToLearning = " You have mastered " + curruntprogressnumberforMasterMasterToLearning + " out of 50";
+                String MasterToLearning = " You have mastered " + curruntprogressnumberforMasterMasterToLearning + " out of 07";
                 tvProgressMaster.setText(MasterToLearning);
             }
             if (progressBarLearning.getProgress() <= progressBarLearning.getMax()) {
                 int currentLearningProgress2 = progressBarLearning.getProgress() + 1;
                 progressBarLearning.setProgress(currentLearningProgress2);
                 String curruntprogressnumberforLearningMasterToLearning2 = Integer.toString(progressBarLearning.getProgress());
-                String MasterToLearning2 = " You are learning " + curruntprogressnumberforLearningMasterToLearning2 + " out of 50";
+                String MasterToLearning2 = " You are learning " + curruntprogressnumberforLearningMasterToLearning2 + " out of 07";
                 tvProgressLearning.setText(MasterToLearning2);
 
             }
@@ -193,7 +206,7 @@ public class WeekDaysFragment extends Fragment {
                 int currentReviewProgress1 = progressBarReview.getProgress() - 1;
                 progressBarReview.setProgress(currentReviewProgress1);
                 String curruntprogressnumberforReviewreviewToLearning = Integer.toString(progressBarReview.getProgress());
-                String reviewToLearning = " You are reviewing " + curruntprogressnumberforReviewreviewToLearning + " out of 50";
+                String reviewToLearning = " You are reviewing " + curruntprogressnumberforReviewreviewToLearning + " out of 07";
                 tvProgressReview.setText(reviewToLearning);
 
             }
@@ -201,7 +214,7 @@ public class WeekDaysFragment extends Fragment {
                 int currentLearningProgress3 = progressBarLearning.getProgress() + 1;
                 progressBarLearning.setProgress(currentLearningProgress3);
                 String curruntprogressnumberforLearningreviewToLearning2 = Integer.toString(progressBarLearning.getProgress());
-                String reviewToLearning2 = " You are learning " + curruntprogressnumberforLearningreviewToLearning2 + " out of 50";
+                String reviewToLearning2 = " You are learning " + curruntprogressnumberforLearningreviewToLearning2 + " out of 07";
                 tvProgressLearning.setText(reviewToLearning2);
             }
 
@@ -219,7 +232,7 @@ public class WeekDaysFragment extends Fragment {
                 int currentMasterProgress2=progressBarMaster.getProgress() +1;
                 progressBarMaster.setProgress(currentMasterProgress2);
                 String curruntprogressnumberforMasterMasterProgress1 = Integer.toString(progressBarMaster.getProgress());
-                String MasterProgress1= " You have mastered " + curruntprogressnumberforMasterMasterProgress1 + " out of 50";
+                String MasterProgress1= " You have mastered " + curruntprogressnumberforMasterMasterProgress1 + " out of 07";
                 tvProgressMaster.setText(MasterProgress1);
 
             }
@@ -236,7 +249,7 @@ public class WeekDaysFragment extends Fragment {
                 int currentMasterProgress3=progressBarMaster.getProgress() +1;
                 progressBarMaster.setProgress(currentMasterProgress3);
                 String curruntprogressnumberforMasterReviewToMaster = Integer.toString(progressBarMaster.getProgress());
-                String ReviewToMaster = " You have mastered " + curruntprogressnumberforMasterReviewToMaster + " out of 50";
+                String ReviewToMaster = " You have mastered " + curruntprogressnumberforMasterReviewToMaster + " out of 07";
                 tvProgressMaster.setText(ReviewToMaster);
 
             }
@@ -244,7 +257,7 @@ public class WeekDaysFragment extends Fragment {
                 int currentReviewProgress2=progressBarReview.getProgress() -1;
                 progressBarReview.setProgress(currentReviewProgress2);
                 String curruntprogressnumberforReviewReviewToMaster2 = Integer.toString(progressBarReview.getProgress());
-                String ReviewToMaster2 = " You are reviewing " + curruntprogressnumberforReviewReviewToMaster2 + " out of 50";
+                String ReviewToMaster2 = " You are reviewing " + curruntprogressnumberforReviewReviewToMaster2 + " out of 07";
                 tvProgressReview.setText(ReviewToMaster2);
 
             }
@@ -268,7 +281,7 @@ public class WeekDaysFragment extends Fragment {
                 int currentReviewProgress3=progressBarReview.getProgress() +1;
                 progressBarReview.setProgress(currentReviewProgress3);
                 String curruntprogressnumberforReviewLearningToReview = Integer.toString(progressBarReview.getProgress());
-                String LearningToReview = " You are reviewing " + curruntprogressnumberforReviewLearningToReview + " out of 50";
+                String LearningToReview = " You are reviewing " + curruntprogressnumberforReviewLearningToReview + " out of 07";
                 tvProgressReview.setText(LearningToReview);
 
             }
@@ -276,7 +289,7 @@ public class WeekDaysFragment extends Fragment {
                 int currentLearningProgress4=progressBarLearning.getProgress() -1;
                 progressBarLearning.setProgress(currentLearningProgress4);
                 String curruntprogressnumberforLearningLearningToReview2 = Integer.toString(progressBarLearning.getProgress());
-                String LearningToReview2 = " You are learning "+curruntprogressnumberforLearningLearningToReview2+" out of 50";
+                String LearningToReview2 = " You are learning "+curruntprogressnumberforLearningLearningToReview2+" out of 07";
                 tvProgressLearning.setText(LearningToReview2);
             }
 
