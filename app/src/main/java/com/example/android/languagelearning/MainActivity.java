@@ -64,14 +64,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         topics.add(new Topics(0, "Names of Week Days", "0 of 7  words mastered"));
         topics.add(new Topics(1, "Names of Months", "0 of 12  words mastered"));
-        topics.add(new Topics(2, "Health and fitness", "0 of 50  words mastered"));
-        topics.add(new Topics(3, "History and events", "0 of 50  words mastered"));
-        topics.add(new Topics(4, "Natural sciences and nature", "0 of 50  words mastered"));
-        topics.add(new Topics(5, "People and self", "0 of 50  words mastered"));
-        topics.add(new Topics(6, "Philosophy and thinking", "0 of 50  words mastered"));
-        topics.add(new Topics(7, "Religion and spirituality", "0 of 50  words mastered"));
-        topics.add(new Topics(8, "Social sciences and society", "0 of 50  words mastered"));
-        topics.add(new Topics(9, "Technology and applied sciences", "0 of 50  words mastered"));
+//        topics.add(new Topics(2, "Health and fitness", "0 of 50  words mastered"));
+//        topics.add(new Topics(3, "History and events", "0 of 50  words mastered"));
+//        topics.add(new Topics(4, "Natural sciences and nature", "0 of 50  words mastered"));
+//        topics.add(new Topics(5, "People and self", "0 of 50  words mastered"));
+//        topics.add(new Topics(6, "Philosophy and thinking", "0 of 50  words mastered"));
+//        topics.add(new Topics(7, "Religion and spirituality", "0 of 50  words mastered"));
+//        topics.add(new Topics(8, "Social sciences and society", "0 of 50  words mastered"));
+//        topics.add(new Topics(9, "Technology and applied sciences", "0 of 50  words mastered"));
 
         topicAdapter = new TopicAdapter(this, topics);
 

@@ -71,7 +71,8 @@ class TopicAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
 
         if (holder instanceof TopicViewHolder) {
-            Topics topics1 = topics.get(position-1);
+            int TopicPosition =position-1;
+            Topics topics1 = topics.get(TopicPosition);
 
             ((TopicViewHolder) holder).textViewTitle.setText(topics1.getTitle());
             ((TopicViewHolder) holder).textViewProgress.setText(topics1.getProgressText());
@@ -103,7 +104,7 @@ class TopicAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     @Override
     public int getItemCount() {
-        return topics.size();
+        return topics.size()+1;
     }
 
     public static class TopicViewHolder extends RecyclerView.ViewHolder {
