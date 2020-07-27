@@ -4,6 +4,7 @@ import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.RequiresApi;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import android.text.TextUtils;
@@ -12,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -40,7 +42,7 @@ public class WeekDaysFragment extends Fragment {
     private String[] words_definition = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
     private Map<String, String> map = new HashMap<>();
     private String mTag= "Global";
-
+    CardView cardView;
 
 
 
@@ -54,6 +56,7 @@ public class WeekDaysFragment extends Fragment {
             map.put(words[i], mTag);
         }
         // Master Progress Initial Settings
+        cardView = view.findViewById(R.id.word_card_view);
         progressBarMaster = view.findViewById(R.id.progressbar_master);
         tvProgressMaster = view.findViewById(R.id.tv_progress_master);
         tvProgressMaster.setText("You have Mastered 0 out of 07");
@@ -87,6 +90,7 @@ public class WeekDaysFragment extends Fragment {
         reveal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                cardView.animate().rotationY(cardView.getRotationY()+360).setDuration(153).start();
                 idont.setVisibility(View.VISIBLE);
                 iknow.setVisibility(View.VISIBLE);
                 textView_definition.setVisibility(View.VISIBLE);
