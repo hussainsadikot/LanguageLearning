@@ -78,7 +78,7 @@ class TopicAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             ((TopicViewHolder) holder).textViewProgress.setText(topics1.getProgressText());
             ((TopicViewHolder) holder).progressBar.getProgress();
         } else if (holder instanceof CreateAccountViewHolder) {
-            ((CreateAccountViewHolder) holder).textViewSignIn.setText("Sign In");
+//            ((CreateAccountViewHolder) holder).textViewSignIn.setText(context.getResources().getString(R.string.sign_in));
 
 
             ((CreateAccountViewHolder) holder).textViewSignIn.setOnClickListener(new View.OnClickListener() {
@@ -151,6 +151,7 @@ class TopicAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             super(itemView);
             textMessage = itemView.findViewById(R.id.title_create_account);
             textView = itemView.findViewById(R.id.tv_or);
+
             textViewSignIn = itemView.findViewById(R.id.tv_sign_in);
             createAccountButton = itemView.findViewById(R.id.create_account_button);
 

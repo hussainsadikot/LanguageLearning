@@ -64,15 +64,21 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         topics.add(new Topics(0, "Names of Week Days", "0 of 7  words mastered"));
         topics.add(new Topics(1, "Names of Months", "0 of 12  words mastered"));
-//        topics.add(new Topics(2, "Health and fitness", "0 of 50  words mastered"));
-//        topics.add(new Topics(3, "History and events", "0 of 50  words mastered"));
-//        topics.add(new Topics(4, "Natural sciences and nature", "0 of 50  words mastered"));
-//        topics.add(new Topics(5, "People and self", "0 of 50  words mastered"));
-//        topics.add(new Topics(6, "Philosophy and thinking", "0 of 50  words mastered"));
-//        topics.add(new Topics(7, "Religion and spirituality", "0 of 50  words mastered"));
-//        topics.add(new Topics(8, "Social sciences and society", "0 of 50  words mastered"));
-//        topics.add(new Topics(9, "Technology and applied sciences", "0 of 50  words mastered"));
-
+        topics.add(new Topics(2, "Words List 1", "0 of 50  words mastered"));
+        topics.add(new Topics(3, "Words List 2", "0 of 50  words mastered"));
+        topics.add(new Topics(4, "Words List 3", "0 of 50  words mastered"));
+        topics.add(new Topics(5, "Words List 4", "0 of 50  words mastered"));
+        topics.add(new Topics(6, "Words List 5", "0 of 50  words mastered"));
+        topics.add(new Topics(7, "Words List 6", "0 of 50  words mastered"));
+        topics.add(new Topics(8, "Words List 7", "0 of 50  words mastered"));
+        topics.add(new Topics(9, "Words List 8", "0 of 50  words mastered"));
+        topics.add(new Topics(10, "Words List 9", "0 of 50  words mastered"));
+        topics.add(new Topics(11, "Words List 10", "0 of 50  words mastered"));
+        topics.add(new Topics(12, "Words List 11", "0 of 50  words mastered"));
+        topics.add(new Topics(13, "Words List 12", "0 of 50  words mastered"));
+        topics.add(new Topics(14, "Words List 13", "0 of 50  words mastered"));
+        topics.add(new Topics(15, "Words List 14", "0 of 50  words mastered"));
+        topics.add(new Topics(16, "Words List 15", "0 of 50  words mastered"));
         topicAdapter = new TopicAdapter(this, topics);
 
         topicAdapter.setOnItemClickListener(new TopicAdapter.OnItemClickListener() {
@@ -104,20 +110,68 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 i.putExtra("array", "Names of Months");
                 startActivity(i);
                 break;
-//            case 3:
-//                i.putExtra("array", "Health and fitness");
-//                startActivity(i);
-//                break;
-//            case 4:
-//                i.putExtra("array", "History and events");
-//                startActivity(i);
-//                break;
-//            case R.id.btn5:
-////                i.putExtra("file",5);
-////                startActivity(i);
-////                break;
-//            default:
-//                break;
+            case 3:
+                i.putExtra("array", "Words List 1");
+                startActivity(i);
+                break;
+            case 4:
+                i.putExtra("array", "Words List 2");
+                startActivity(i);
+                break;
+            case 5:
+                i.putExtra("array","Words List 3");
+                startActivity(i);
+                break;
+            case 6:
+                i.putExtra("array","Words List 4");
+                startActivity(i);
+                break;
+            case 7:
+                i.putExtra("array","Words List 5");
+                startActivity(i);
+                break;
+            case 8:
+                i.putExtra("array","Words List 6");
+                startActivity(i);
+                break;
+            case 9:
+                i.putExtra("array","Words List 7");
+                startActivity(i);
+                break;
+            case 10:
+                i.putExtra("array","Words List 8");
+                startActivity(i);
+                break;
+            case 11:
+                i.putExtra("array","Words List 9");
+                startActivity(i);
+                break;
+            case 12:
+                i.putExtra("array","Words List 10");
+                startActivity(i);
+                break;
+            case 13:
+                i.putExtra("array","Words List 11");
+                startActivity(i);
+                break;
+            case 14:
+                i.putExtra("array","Words List 12");
+                startActivity(i);
+                break;
+            case 15:
+                i.putExtra("array","Words List 13");
+                startActivity(i);
+                break;
+            case 16:
+                i.putExtra("array","Words List 14");
+                startActivity(i);
+                break;
+            case 17:
+                i.putExtra("array","Words List 15");
+                startActivity(i);
+                break;
+                default:
+                break;
     }
 
 

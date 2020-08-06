@@ -14,107 +14,149 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
-            <RelativeLayout
-                android:id="@+id/word_root"
+            <FrameLayout
+                android:id="@+id/frame_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+                <!--    <androidx.cardview.widget.CardView-->
+                <!--    android:layout_width="match_parent"-->
+                <!--    android:layout_height="wrap_content"-->
+                <!--    android:id="@+id/card"-->
+                <!--    app:cardCornerRadius="16dp">-->
+                <!--    <RelativeLayout-->
+                <!--        android:layout_width="match_parent"-->
+                <!--        android:layout_height="match_parent">-->
+                <!--    <TextView-->
+                <!--        android:id="@+id/tv"-->
+                <!--        android:layout_width="wrap_content"-->
+                <!--        android:layout_height="wrap_content"-->
+                <!--        android:text="Hello World!"-->
+                <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+                <!--        app:layout_constraintLeft_toLeftOf="parent"-->
+                <!--        app:layout_constraintRight_toRightOf="parent"-->
+                <!--        app:layout_constraintTop_toTopOf="parent"-->
+                <!--        android:layout_centerHorizontal="true"-->
+                <!--        android:textSize="54sp"-->
+
+                <!--        />-->
+                <!--    <ImageView-->
+                <!--        android:layout_width="match_parent"-->
+                <!--        android:layout_height="200dp"-->
+                <!--        android:src="@drawable/ic_android"-->
+                <!--        android:layout_below="@id/tv"-->
+                <!--        android:scaleType="centerCrop"-->
+                <!--        />-->
+                <!--    </RelativeLayout>-->
+
+                <!--</androidx.cardview.widget.CardView>-->
+                <include layout="@layout/card_front" android:id="@+id/front_card"/>
+                <include layout="@layout/card_back" android:id="@+id/back_card" android:visibility="gone"/>
 
 
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/word_card_view"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:background="@drawable/white_box"
-                    app:cardCornerRadius="8dp">
+            </FrameLayout>
+<!--            <RelativeLayout-->
+<!--                android:id="@+id/word_root"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content">-->
 
 
-                    <RelativeLayout
-
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:backgroundTint="@drawable/white_box"
-
-
-                        >
-
-
-                        <TextView
-                            android:id="@+id/tv_word_title"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerInParent="false"
-                            android:layout_centerHorizontal="true"
-                            android:layout_margin="16dp"
-                            android:text="Title 1"
-                            android:textColor="@android:color/black"
-                            android:textSize="22sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/tv_definition_word"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/tv_word_title"
-                            android:layout_centerInParent="false"
-                            android:layout_margin="16dp"
-                            android:text="Long defination."
-                            android:textColor="@android:color/black"
-                            android:textSize="24sp"
-                            android:visibility="invisible" />
+<!--                <androidx.cardview.widget.CardView-->
+<!--                    android:id="@+id/word_card_view"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_margin="8dp"-->
+<!--                    android:background="@drawable/white_box"-->
+<!--                    app:cardCornerRadius="8dp">-->
 
 
-                        <Button
-                            android:id="@+id/i_know_button"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/tv_definition_word"
-                            android:background="@drawable/white_box_rectangle"
-                            android:backgroundTint="#F1EEEE"
-                            android:elevation="0dp"
-                            android:text="I Know ->"
-                            android:textSize="12sp"
-                            android:visibility="invisible" />
+<!--                    <RelativeLayout-->
 
-                        <Button
-                            android:id="@+id/i__dont_know_button"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/i_know_button"
-                            android:background="@drawable/white_box"
-                            android:backgroundTint="#F1EEEE"
-                            android:elevation="0dp"
-                            android:text=" No I don't Know ->"
-                            android:textSize="12sp"
-                            android:visibility="invisible"
-
-                            />
-
-                        <Button
-                            android:id="@+id/reveal_button"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/i__dont_know_button"
-                            android:background="@drawable/white_box"
-                            android:backgroundTint="#F1EEEE"
-                            android:elevation="0dp"
-                            android:text="Tap to see definition ->"
-                            android:textSize="12sp"
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:backgroundTint="@drawable/white_box"-->
 
 
-                            />
+<!--                        >-->
 
 
-                    </RelativeLayout>
-                </androidx.cardview.widget.CardView>
-            </RelativeLayout>
+<!--                        <TextView-->
+<!--                            android:id="@+id/tv_word_title"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_centerInParent="false"-->
+<!--                            android:layout_centerHorizontal="true"-->
+<!--                            android:layout_margin="16dp"-->
+<!--                            android:text="Title 1"-->
+<!--                            android:textColor="@android:color/black"-->
+<!--                            android:textSize="22sp"-->
+<!--                            android:textStyle="normal"-->
+<!--                            android:textAllCaps="true"-->
+<!--                            />-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/tv_definition_word"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_below="@id/tv_word_title"-->
+<!--                            android:layout_centerInParent="false"-->
+<!--                            android:layout_margin="16dp"-->
+<!--                            android:textStyle="bold"-->
+<!--                            android:text="Long defination."-->
+<!--                            android:textColor="@android:color/black"-->
+<!--                            android:textSize="24sp"-->
+<!--                            android:visibility="invisible" />-->
+
+
+<!--                        <Button-->
+<!--                            android:id="@+id/i_know_button"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_below="@id/tv_definition_word"-->
+<!--                            android:background="@drawable/white_box_rectangle"-->
+<!--                            android:backgroundTint="#F1EEEE"-->
+<!--                            android:elevation="0dp"-->
+<!--                            android:text="@string/i_know_button"-->
+<!--                            android:textSize="12sp"-->
+<!--                            android:visibility="invisible" />-->
+
+<!--                        <Button-->
+<!--                            android:id="@+id/i__dont_know_button"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_below="@id/i_know_button"-->
+<!--                            android:background="@drawable/white_box"-->
+<!--                            android:backgroundTint="#F1EEEE"-->
+<!--                            android:elevation="0dp"-->
+<!--                            android:text="@string/no_i_don_t_know"-->
+<!--                            android:textSize="12sp"-->
+<!--                            android:visibility="invisible"-->
+
+<!--                            />-->
+
+<!--                        <Button-->
+<!--                            android:id="@+id/reveal_button"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_below="@id/i__dont_know_button"-->
+<!--                            android:background="@drawable/white_box"-->
+<!--                            android:backgroundTint="#F1EEEE"-->
+<!--                            android:elevation="0dp"-->
+<!--                            android:text="Tap to see definition ->"-->
+<!--                            android:textSize="12sp"-->
+
+
+<!--                            />-->
+
+
+<!--                    </RelativeLayout>-->
+<!--                </androidx.cardview.widget.CardView>-->
+<!--            </RelativeLayout>-->
 
             <RelativeLayout
                 android:id="@+id/progress_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/word_root"
+                android:layout_below="@id/frame_layout"
 
                 >
 

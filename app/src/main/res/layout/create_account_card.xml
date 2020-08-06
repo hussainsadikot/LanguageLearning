@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="false"
             android:layout_marginRight="16dp"
-            android:text="Create an account to save your progress\n It's free and only takes a minute! ;)"
+            android:text="@string/create_an_account_to_save_your_progress_n_it_s_free_and_only_takes_a_minute"
             android:textColor="@android:color/holo_green_light"
             android:textSize="12sp" />
 
@@ -41,7 +41,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginRight="16dp"
             android:elevation="0dp"
-            android:text="Create account"
+            android:text="@string/create_account"
             android:textSize="12sp"
 
             />
@@ -54,7 +54,7 @@
             android:layout_marginLeft="16dp"
             android:layout_marginTop="8dp"
             android:layout_toRightOf="@id/create_account_button"
-            android:text="or"
+            android:text="@string/or"
             android:textColor="@android:color/holo_green_light" />
 
         <TextView
@@ -65,7 +65,7 @@
             android:layout_marginLeft="16dp"
             android:layout_marginTop="8dp"
             android:layout_toRightOf="@id/tv_or"
-            android:text="Sign In"
+            android:text="@string/sign_in"
             android:textColor="@android:color/holo_green_light" />
 
     </RelativeLayout>

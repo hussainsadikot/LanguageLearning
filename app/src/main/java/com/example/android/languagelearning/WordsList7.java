@@ -5,32 +5,29 @@ import android.animation.AnimatorInflater;
 import android.animation.AnimatorSet;
 import android.os.Build;
 import android.os.Bundle;
-
-import androidx.annotation.RequiresApi;
-import androidx.cardview.widget.CardView;
-import androidx.fragment.app.Fragment;
-
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ProgressBar;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.RequiresApi;
+import androidx.cardview.widget.CardView;
+import androidx.fragment.app.Fragment;
+
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
-import java.util.Random;
 
 
-public class WeekDaysFragment extends Fragment {
+public class WordsList7 extends Fragment {
     private Button iknow, idont, reveal;
     private TextView textView_title_front,textView_title_back, textView_definition, tv_tag, tvProgressMaster, tvProgressLearning, tvProgressReview;
     private ProgressBar progressBarReview, progressBarMaster, progressBarLearning;
-//    private GlobalListOfWordAndDefinition currentGlobalWord;
+    //    private GlobalListOfWordAndDefinition currentGlobalWord;
     private String global= "Global";
     private String master= "Master";
     private String review= "Review";
@@ -41,53 +38,55 @@ public class WeekDaysFragment extends Fragment {
     private int learningsize = 1;
     private int mGlobalWordNumber = 0;
 
-    private String[] words = {"Day 1", "Day 2", "Day 3", "Day 4", "Day 5", "Day 6", "Day 7"};
-    private String[] words_definition = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
+    private String[] words = {"Month 1", "Month 2", "Month 3", "Month 4", "Month 5", "Month 6", "Month 7", "Month 8", "Month 9", "Month 10", "Month 11", "Month 12"};
+    private String[] words_definition = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
     private Map<String, String> map = new HashMap<>();
     private String mTag= "Global";
-//    CardView cardView;
-    private CardView cardFront,cardBack;
+    CardView cardBack,cardFront;
     private boolean flipped;
+
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        String[] words1= getActivity().getResources().getStringArray(R.array.VIII_Profession_and_Professional_equipments___IX_Sense_perception_Emotion_and_temperament_etc__Array_List_7);
+        String[] words_definition1= getActivity().getResources().getStringArray(R.array.Definition_Array_List_7);
+        words = Arrays.copyOf(words1, words1.length);
+        words_definition = Arrays.copyOf(words_definition1, words_definition1.length);
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_word_display, container, false);
         tv_tag = view.findViewById(R.id.tv_word_tag);
         for (int i = 0; i <= words.length - 1; i++) {
             map.put(words[i], mTag);
         }
-        //settingup card for animation
+        // Bind Card layout
 
-      cardFront = view.findViewById(R.id.front_card);
-       cardBack  = view.findViewById(R.id.back_card );
-//        float scale = this.getResources().getDisplayMetrics().density * 8000;
-//        this.cardFront.setCameraDistance(scale);
-//        this.cardBack.setCameraDistance(scale);
-//        this.cardBack.setAlpha(0.0f);
+        cardFront = view.findViewById(R.id.front_card);
+        cardBack  = view.findViewById(R.id.back_card );
+
+
         // Master Progress Initial Settings
-//        cardView = view.findViewById(R.id.word_card_view);
+
         progressBarMaster = view.findViewById(R.id.progressbar_master);
         tvProgressMaster = view.findViewById(R.id.tv_progress_master);
-        tvProgressMaster.setText("You have Mastered 0 out of 07");
+        tvProgressMaster.setText("You have Mastered 0 out of "+words.length);
         progressBarMaster.setProgress(0);
-        progressBarMaster.setMax(7);
+        progressBarMaster.setMax(12);
 
         // Learning Progress Initial Settings
         progressBarLearning = view.findViewById(R.id.progressbar_learning);
         progressBarLearning.setProgress(0);
-        progressBarLearning.setMax(7);
+        progressBarLearning.setMax(12);
 
         tvProgressLearning = view.findViewById(R.id.learning_progress_tv);
-        tvProgressLearning.setText("You have learn 0 out of 07");
+        tvProgressLearning.setText("You are learning 0 out of "+words.length);
 
         // Review Progress Initial Settings
         progressBarReview = view.findViewById(R.id.progressbar_review);
-        progressBarReview.setMax(7);
+        progressBarReview.setMax(12);
         tvProgressReview = view.findViewById(R.id.review_progress_tv);
-        tvProgressReview.setText("You have review 0 out of 07");
+        tvProgressReview.setText("You are reviewing 0 out of "+words.length);
 
 
         textView_title_front = view.findViewById(R.id.tv_word_title_front);
@@ -96,24 +95,12 @@ public class WeekDaysFragment extends Fragment {
         reveal = view.findViewById(R.id.reveal_button_front);
         idont = view.findViewById(R.id.i__dont_know_button);
         iknow = view.findViewById(R.id.i_know_button);
-//        textView_definition.setVisibility(View.GONE);
-//        idont.setVisibility(View.GONE);
-//        iknow.setVisibility(View.GONE);
+
 
         reveal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-
                 flip();
-//                cardFront.setVisibility(View.GONE);
-//                cardBack.setVisibility(View.VISIBLE);
-//                cardView.animate().rotationY(cardView.getRotationY()+360).setDuration(1000).start();
-//                idont.setVisibility(View.VISIBLE);
-//                iknow.setVisibility(View.VISIBLE);
-//                textView_definition.setVisibility(View.VISIBLE);
-//                reveal.setVisibility(View.GONE);
-
             }
         });
         iknow.setOnClickListener(new View.OnClickListener() {
@@ -123,14 +110,11 @@ public class WeekDaysFragment extends Fragment {
                 String iknowword = textView_title_back.getText().toString();
 //                findIndex(globalListOfWordAndDefinition.globalWord,iknowword);
                 ChangeTag(iknowword);
+//                revealNextWord();
 
 //                Toast.makeText(MainActivity.this, "You know this word Fantastic", Toast.LENGTH_SHORT).show();
                 updateNextWordfromGlobal();
-
                 flipReverse();
-                revealNextWord();
-
-
             }
         });
         idont.setOnClickListener(new View.OnClickListener() {
@@ -139,20 +123,29 @@ public class WeekDaysFragment extends Fragment {
                 String idontknowword = textView_title_back.getText().toString();
                 ChangeTagForIDont(idontknowword);
 //                Toast.makeText(MainActivity.this, "You don't know this word, cool", Toast.LENGTH_SHORT).show();
+//                revealNextWord();
                 updateNextWordfromGlobal();
-                flipReverse();
-                revealNextWord();
-//
-
             }
         });
 
 //        ((Main2Activity) Objects.requireNonNull(getActivity())).updateNextWordfromGlobal();
         updateNextWordfromGlobal();
-
         return view;
 
+
+
+
+
+
     }
+//    private void revealNextWord() {
+//        textView_definition.setVisibility(View.GONE);
+//        idont.setVisibility(View.GONE);
+//        iknow.setVisibility(View.GONE);
+//
+//        reveal.setVisibility(View.VISIBLE);
+//    }
+
 
     private void flipReverse() {
 
@@ -218,14 +211,6 @@ public class WeekDaysFragment extends Fragment {
 
     }
 
-    private void revealNextWord() {
-
-//        textView_definition.setVisibility(View.GONE);
-//        idont.setVisibility(View.GONE);
-//        iknow.setVisibility(View.GONE);
-//
-//        reveal.setVisibility(View.VISIBLE);
-    }
 
     private void updateNextWordfromGlobal() {
 
@@ -251,14 +236,16 @@ public class WeekDaysFragment extends Fragment {
 
     }
 
+
+
     private void ChangeTagForIDont(String idontknowword) {
-        if ((TextUtils.equals(map.get(idontknowword),global))) {
+        if ((TextUtils.equals(map.get(idontknowword), global))) {
             map.put(idontknowword, "Learning");
             if (progressBarLearning.getProgress() <= progressBarLearning.getMax()) {
                 int currentLearningProgress1 = progressBarLearning.getProgress() + 1;
                 progressBarLearning.setProgress(currentLearningProgress1);
                 String curruntprogressnumberforLearningglobalToLearning = Integer.toString(progressBarLearning.getProgress());
-                String globalToLearning = " You are learning " + curruntprogressnumberforLearningglobalToLearning + " out of 07";
+                String globalToLearning = " You are learning " + curruntprogressnumberforLearningglobalToLearning + " out of "+words.length;
                 tvProgressLearning.setText(globalToLearning);
 
             }
@@ -273,14 +260,14 @@ public class WeekDaysFragment extends Fragment {
                 int currentMasterProgress1 = progressBarMaster.getProgress() - 1;
                 progressBarMaster.setProgress(currentMasterProgress1);
                 String curruntprogressnumberforMasterMasterToLearning = Integer.toString(progressBarMaster.getProgress());
-                String MasterToLearning = " You have mastered " + curruntprogressnumberforMasterMasterToLearning + " out of 07";
+                String MasterToLearning = " You have mastered " + curruntprogressnumberforMasterMasterToLearning + " out of "+words.length;
                 tvProgressMaster.setText(MasterToLearning);
             }
             if (progressBarLearning.getProgress() <= progressBarLearning.getMax()) {
                 int currentLearningProgress2 = progressBarLearning.getProgress() + 1;
                 progressBarLearning.setProgress(currentLearningProgress2);
                 String curruntprogressnumberforLearningMasterToLearning2 = Integer.toString(progressBarLearning.getProgress());
-                String MasterToLearning2 = " You are learning " + curruntprogressnumberforLearningMasterToLearning2 + " out of 07";
+                String MasterToLearning2 = " You are learning " + curruntprogressnumberforLearningMasterToLearning2 + " out of "+words.length;
                 tvProgressLearning.setText(MasterToLearning2);
 
             }
@@ -291,12 +278,12 @@ public class WeekDaysFragment extends Fragment {
         } else if (TextUtils.equals(map.get(idontknowword), "Review")) {
             map.put(idontknowword, "Learning");
 //            globalListOfWordAndDefinition.setTag("Master",indexOfGlobalTag);
-            Toast.makeText(getActivity(), "Tag changed from Reviewing to Learning", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(getActivity(), "Tag changed from Reviewing to Learning", Toast.LENGTH_SHORT).show();
             if (progressBarReview.getProgress() <= progressBarReview.getMax()) {
                 int currentReviewProgress1 = progressBarReview.getProgress() - 1;
                 progressBarReview.setProgress(currentReviewProgress1);
                 String curruntprogressnumberforReviewreviewToLearning = Integer.toString(progressBarReview.getProgress());
-                String reviewToLearning = " You are reviewing " + curruntprogressnumberforReviewreviewToLearning + " out of 07";
+                String reviewToLearning = " You are reviewing " + curruntprogressnumberforReviewreviewToLearning + " out of "+words.length;
                 tvProgressReview.setText(reviewToLearning);
 
             }
@@ -304,7 +291,7 @@ public class WeekDaysFragment extends Fragment {
                 int currentLearningProgress3 = progressBarLearning.getProgress() + 1;
                 progressBarLearning.setProgress(currentLearningProgress3);
                 String curruntprogressnumberforLearningreviewToLearning2 = Integer.toString(progressBarLearning.getProgress());
-                String reviewToLearning2 = " You are learning " + curruntprogressnumberforLearningreviewToLearning2 + " out of 07";
+                String reviewToLearning2 = " You are learning " + curruntprogressnumberforLearningreviewToLearning2 + " out of "+words.length;
                 tvProgressLearning.setText(reviewToLearning2);
             }
 
@@ -314,44 +301,42 @@ public class WeekDaysFragment extends Fragment {
     }
 
     private void ChangeTag(String iknowWord) {
-        if(TextUtils.equals(map.get(iknowWord), "Global")){
-            map.put(iknowWord,"Master");
+        if (TextUtils.equals(map.get(iknowWord), "Global")) {
+            map.put(iknowWord, "Master");
 //            globalListOfWordAndDefinition.setTag("Master",indexOfGlobalTag);
 //            Toast.makeText(getActivity(), "Tag changed to Master", Toast.LENGTH_SHORT).show();
-            if (progressBarMaster.getProgress() <= progressBarMaster.getMax()){
-                int currentMasterProgress2=progressBarMaster.getProgress() +1;
+            if (progressBarMaster.getProgress() <= progressBarMaster.getMax()) {
+                int currentMasterProgress2 = progressBarMaster.getProgress() + 1;
                 progressBarMaster.setProgress(currentMasterProgress2);
                 String curruntprogressnumberforMasterMasterProgress1 = Integer.toString(progressBarMaster.getProgress());
-                String MasterProgress1= " You have mastered " + curruntprogressnumberforMasterMasterProgress1 + " out of 07";
+                String MasterProgress1 = " You have mastered " + curruntprogressnumberforMasterMasterProgress1 + " out of "+words.length;
                 tvProgressMaster.setText(MasterProgress1);
 
             }
 
             tv_tag.setText(map.get(iknowWord));
 
-        }
-        else if(TextUtils.equals(map.get(iknowWord), "Review")){
+        } else if (TextUtils.equals(map.get(iknowWord), "Review")) {
 
 
-            map.put(iknowWord,"Master");
+            map.put(iknowWord, "Master");
 //            globalListOfWordAndDefinition.setTag("Master",indexOfGlobalTag);
-            if (progressBarMaster.getProgress() <= progressBarMaster.getMax()){
-                int currentMasterProgress3=progressBarMaster.getProgress() +1;
+            if (progressBarMaster.getProgress() <= progressBarMaster.getMax()) {
+                int currentMasterProgress3 = progressBarMaster.getProgress() + 1;
                 progressBarMaster.setProgress(currentMasterProgress3);
                 String curruntprogressnumberforMasterReviewToMaster = Integer.toString(progressBarMaster.getProgress());
-                String ReviewToMaster = " You have mastered " + curruntprogressnumberforMasterReviewToMaster + " out of 07";
+                String ReviewToMaster = " You have mastered " + curruntprogressnumberforMasterReviewToMaster + " out of "+words.length;
                 tvProgressMaster.setText(ReviewToMaster);
 
             }
             if (progressBarReview.getProgress() <= progressBarReview.getMax()) {
-                int currentReviewProgress2=progressBarReview.getProgress() -1;
+                int currentReviewProgress2 = progressBarReview.getProgress() - 1;
                 progressBarReview.setProgress(currentReviewProgress2);
                 String curruntprogressnumberforReviewReviewToMaster2 = Integer.toString(progressBarReview.getProgress());
-                String ReviewToMaster2 = " You are reviewing " + curruntprogressnumberforReviewReviewToMaster2 + " out of 07";
+                String ReviewToMaster2 = " You are reviewing " + curruntprogressnumberforReviewReviewToMaster2 + " out of "+words.length;
                 tvProgressReview.setText(ReviewToMaster2);
 
             }
-
 
 
 //            Toast.makeText(getActivity(), "Tag changed from Review to Master", Toast.LENGTH_SHORT).show();
@@ -360,30 +345,25 @@ public class WeekDaysFragment extends Fragment {
             tv_tag.setText(map.get(iknowWord));
 
 
-
-
-        }
-        else if(TextUtils.equals(map.get(iknowWord), "Learning")){
-            map.put(iknowWord,"Review");
+        } else if (TextUtils.equals(map.get(iknowWord), "Learning")) {
+            map.put(iknowWord, "Review");
 //            globalListOfWordAndDefinition.setTag("Master",indexOfGlobalTag);
 //            Toast.makeText(getActivity(), "Tag changed From Learning to Reviewing", Toast.LENGTH_SHORT).show();
             if (progressBarReview.getProgress() <= progressBarReview.getMax()) {
-                int currentReviewProgress3=progressBarReview.getProgress() +1;
+                int currentReviewProgress3 = progressBarReview.getProgress() + 1;
                 progressBarReview.setProgress(currentReviewProgress3);
                 String curruntprogressnumberforReviewLearningToReview = Integer.toString(progressBarReview.getProgress());
-                String LearningToReview = " You are reviewing " + curruntprogressnumberforReviewLearningToReview + " out of 07";
+                String LearningToReview = " You are reviewing " + curruntprogressnumberforReviewLearningToReview + " out of "+words.length;
                 tvProgressReview.setText(LearningToReview);
 
             }
             if (progressBarLearning.getProgress() <= progressBarLearning.getMax()) {
-                int currentLearningProgress4=progressBarLearning.getProgress() -1;
+                int currentLearningProgress4 = progressBarLearning.getProgress() - 1;
                 progressBarLearning.setProgress(currentLearningProgress4);
                 String curruntprogressnumberforLearningLearningToReview2 = Integer.toString(progressBarLearning.getProgress());
-                String LearningToReview2 = " You are learning "+curruntprogressnumberforLearningLearningToReview2+" out of 07";
+                String LearningToReview2 = " You are learning " + curruntprogressnumberforLearningLearningToReview2 + " out of "+words.length;
                 tvProgressLearning.setText(LearningToReview2);
             }
-
-
 
 
             tv_tag.setText(map.get(iknowWord));

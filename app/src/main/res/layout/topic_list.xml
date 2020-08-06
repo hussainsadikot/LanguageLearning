@@ -62,7 +62,7 @@
             android:background="@drawable/white_box"
             android:backgroundTint="#F1EEEE"
             android:elevation="0dp"
-            android:text="Practice this topic ->"
+            android:text="@string/practice_this_topic"
             android:textSize="12sp"
 
             />

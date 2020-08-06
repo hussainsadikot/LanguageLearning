@@ -6,4 +6,823 @@
     <string name="close_drawer">दराज को बंद करें</string>
     <string name="hello_blank_fragment">हैलो खाली टुकड़ा</string>
     <string name="drawer_title">त्रिभाषी</string>
+    <string name="create_an_account_to_save_your_progress_n_it_s_free_and_only_takes_a_minute">अपनी प्रगति को बचाने के लिए एक खाता बनाएं यह मुफ़्त होगा और केवल एक मिनट लगेगा!;)</string>
+    <string name="practice_this_topic"><![CDATA[इस विषय का अभ्यास करें ->]]></string>
+    <string name="create_account">खाता बनाएं</string>
+    <string name="or">या</string>
+    <string name="sign_in">साइन इन करें</string>
+    <string name="i_know_button"><![CDATA[मुझे पता है ->]]></string>
+    <string name="no_i_don_t_know"><![CDATA[नहीं, मुझे नहीं पता ->]]></string>
+
+
+    <string-array name="Level_I_Earth_Sky_and_Water__Array_List_1">
+        <item>हवा</item>
+        <item>राख</item>
+        <item>बादल</item>
+        <item>ठंड</item>
+        <item>अंधकार</item>
+        <item>पृथ्वी</item>
+        <item>ग्रहण</item>
+        <item>आग</item>
+        <item>कोहरा</item>
+        <item>जंगल</item>
+        <item>पहाड़ी</item>
+        <item>बर्फ</item>
+        <item>रास्ता</item>
+        <item>चाँद</item>
+        <item>पहाड़</item>
+        <item>बारिश</item>
+        <item>नदी</item>
+        <item>सड़क</item>
+        <item>रेत</item>
+        <item>आसमान</item>
+        <item>हिमपात</item>
+        <item>तारा</item>
+        <item>पत्थर</item>
+        <item>सूर्य</item>
+        <item>पानी</item>
+        <item>हवा</item>
+        <item>लकड़ी</item>
+    </string-array>
+    <string-array name="LEVEL_II_mankind_sex_family_and_relationships__Array_List_2">
+        <item>बच्चा</item>
+        <item>लड़का</item>
+        <item>दुल्हन</item>
+        <item>भाई</item>
+        <item>बच्चा</item>
+        <item>बेटी</item>
+        <item>पिता</item>
+        <item>दोस्त</item>
+        <item>लड़की</item>
+        <item>पति</item>
+        <item>नर</item>
+        <item>आदमी</item>
+        <item>शादी</item>
+        <item>मामा</item>
+        <item>माँ</item>
+        <item>वृद्ध</item>
+        <item>लंबा</item>
+        <item>मोटा</item>
+        <item>अंधा</item>
+        <item>बहन</item>
+        <item>भाभी</item>
+        <item>बेटा</item>
+        <item>पत्नी</item>
+        <item>स्त्री</item>
+    </string-array>
+
+    <string-array name="LEVEL_III_Animals_Bird_etc__Array_List_3">
+        <item>चीटी</item>
+        <item>चिड़िया</item>
+        <item>बिल्ली</item>
+        <item>मुर्गा</item>
+        <item>गाय</item>
+        <item>केकड़ा</item>
+        <item>कुत्ता</item>
+        <item>अंडा</item>
+        <item>मछली</item>
+        <item>उड़ना</item>
+        <item>सियार</item>
+        <item>बकरी</item>
+        <item>घोडा</item>
+        <item>जूं</item>
+        <item>बंदर</item>
+        <item>पूँछ</item>
+        <item>कछुआ</item>
+    </string-array>
+
+
+    <string-array name="LEVEL_IV_Body_parts_Bodily_functions_and_conditions_etc__Array_List_4">
+        <item>काम</item>
+        <item>पेट</item>
+        <item>रक्त</item>
+        <item>शरीर</item>
+        <item>हड्डी</item>
+        <item>छाती</item>
+        <item>कान</item>
+        <item>आँख</item>
+        <item>बुखार</item>
+        <item>मांस</item>
+        <item>पाँव</item>
+        <item>बाल</item>
+        <item>हाथ</item>
+        <item>सर</item>
+        <item>पैर</item>
+        <item>मुह</item>
+        <item>नाक</item>
+        <item>दांत</item>
+    </string-array>
+
+
+    <string-array name="LEVEL_V_Foods_Drinks_Cooking_and_Utencils_etc_LEVEL_VI_Clothing_House_Parts_of_House_etc__Array_List_5">
+        <item>फल</item>
+        <item>शराब</item>
+        <item>दूध</item>
+        <item>नमक</item>
+        <item>धुआँ</item>
+        <item>चावल -पका हुआ</item>
+        <item>चावल- कच्चा</item>
+        <item>कपड़ा</item>
+        <item>बाँसुरी</item>
+        <item>छड़ी</item>
+        <item>दरवाजा</item>
+        <item>घर</item>
+        <item>छत</item>
+        <item>रस्सी</item>
+        <item>दीवार</item>
+        <item>कुवाँ का पानी</item>
+    </string-array>
+
+    <string-array name="LEVEL_VII_Trees_Vegetables_Fruits_and_Flowers__Array_List_6">
+        <item>बांस</item>
+        <item>केला</item>
+        <item>बैंगन</item>
+        <item>मिर्च</item>
+        <item>नारियल</item>
+        <item>फूल</item>
+        <item>फल</item>
+        <item>बगान</item>
+        <item>घास</item>
+        <item>अमरूद</item>
+        <item>कटहल</item>
+        <item>पत्ता</item>
+        <item>आम</item>
+        <item>धान</item>
+        <item>हल</item>
+        <item>मीठा</item>
+        <item>पेड़</item>
+    </string-array>
+
+    <string-array name="VIII_Profession_and_Professional_equipments___IX_Sense_perception_Emotion_and_temperament_etc__Array_List_7">
+
+        <item>मजदूर</item>
+        <item>खेत की जमीन</item>
+
+        <item>काला</item>
+        <item>अंधा</item>
+        <item>ठंडक</item>
+        <item>हरा</item>
+        <item>गर्म</item>
+        <item>रोशनी</item>
+        <item>लाल</item>
+        <item>मीठा</item>
+        <item>सफेद</item>
+        <item>पीला</item>
+        <item>भूखा</item>
+        <item>प्यार</item>
+        <item>दर्द</item>
+    </string-array>
+
+    <string-array name="XI_War_Law__XII_Religion_Entertainment_and_Metals_etc__XV_Instrument_Verbs__XVI_Verbs_of_Fighting__XVII_Music_Verbs__Array_List_8">
+        <item>शत्रु</item>
+        <item>कर्ज</item>
+
+
+        <item>माला</item>
+        <item>अर्चना</item>
+        <item>खेल</item>
+        <item>बाँसुरी</item>
+        <item>पीतल</item>
+        <item>सोना</item>
+        <item>पैसा</item>
+        <item>चांदी</item>
+
+        <item>काटना</item>
+        <item>खंडित</item>
+
+        <item>लड़ाई</item>
+        <item>बहस</item>
+
+        <item>पीटना</item>
+        <item>गाना</item>
+    </string-array>
+
+    <string-array name="XIV_Physical_activities_verbs__Array_List_9">
+        <item>बांधना</item>
+        <item>फूँक मारना </item>
+        <item>तोड़ना </item>
+        <item>जलाना</item>
+        <item>पकड़ना </item>
+        <item>करना </item>
+        <item>गिरना</item>
+        <item>मारना</item>
+        <item>पकड़ना</item>
+        <item>सहारा लेना </item>
+        <item>चाटना</item>
+        <item>बनाना</item>
+        <item>खोलना</item>
+        <item>उठाना</item>
+        <item>खेलना</item>
+        <item>खीचना</item>
+        <item>धकेलना</item>
+        <item>रखना</item>
+        <item>बेचना</item>
+        <item>बंध करना</item>
+        <item>थूकना</item>
+        <item>फूलना</item>
+        <item>फाड़ना</item>
+        <item>फेकना</item>
+        <item>धोना</item>
+        <item>पोंछना</item>
+        <item>काम करना</item>
+    </string-array>
+
+    <string-array name="XVIII_Motion_Verbs__XIX_Occupational_Verbs__XX_Culinari_Verbs__Array_List_10">
+
+        <item>पहुंचना</item>
+        <item>चढ़ना</item>
+        <item>लाना</item>
+        <item>चढ़ना</item>
+        <item>आना</item>
+        <item>नाचना</item>
+        <item>निकास</item>
+        <item>पाना</item>
+        <item>उठना</item>
+        <item>देना</item>
+        <item>जाना</item>
+        <item>कूदना</item>
+        <item>दौड़ना</item>
+        <item>भेजना</item>
+        <item>फिसलना</item>
+        <item>खड़े होना</item>
+        <item>लेना</item>
+        <item>उलटी</item>
+        <item>चलना</item>
+
+        <!--XIX. Occupational Verbs  6 words  -->
+        <item>उपजाना
+
+
+
+
+
+
+</item>
+        <item>कंघी</item>
+        <item>चरना</item>
+        <item>देना</item>
+        <item>दूध</item>
+        <item>काटना</item>
+        <item>बोना</item>
+
+        <!--    <item>XX_Culinari_Verbs 8</item>-->
+
+        <item>काटना</item>
+        <item>पकाना</item>
+        <item>पीना</item>
+        <item>खाना</item>
+        <item>खिलाना</item>
+        <item>चूसना</item>
+        <item>बांधना</item>
+        <item>पहनना</item>
+    </string-array>
+
+    <string-array name="XXI_Communication_Verbs__XXII_Stationary_Verbs__XXIII_In_cohetive_Verbs__XXIV_Cognitive_Verbs__XXV_Sensory_and_Emotive_Verbs__XXVI_Other_Verbs__Array_List_11">
+
+        <!--    <item>XXI_Communication_Verbs (ask,call,say,shout,write)</item>-->
+        <item>पूछना </item>
+        <item>बुलाना</item>
+        <item>कहना</item>
+        <item>चिल्लाना</item>
+        <item>लिखना</item>
+        <!--    <item>XXII_Stationary_Verbs(die
+       live (at )
+       earn
+       hide
+       keep
+       sit
+       stop
+       )</item>-->
+
+        <item>मरना</item>
+        <item>रहना</item>
+        <item>कमाना</item>
+        <item>छुपाना</item>
+        <item>रखना</item>
+        <item>बैठना</item>
+        <item>रुकना</item>
+
+        <!--    <item>XXIII_In_cohetive_Verbs(swell)</item>-->
+        <item>फूलना </item>
+        <!--    <item>XXIV_Cognitive_Verbs (know,learn,break)</item>-->
+
+        <item>जानना </item>
+        <item>सीखना</item>
+        <item>तोड़ना</item>
+
+        <!--    <item>XXV_Sensory_and_Emotive_Verbs(cry (weep )
+        fear
+        hear
+        laugh/ smile
+        read
+        sleep, lie
+        taste
+        wake up
+        kiss
+        love
+        )</item>-->
+
+        <item>रोना</item>
+        <item>डर</item>
+        <item>सुनना</item>
+        <item>हसी</item>
+        <item>पढ़ना</item>
+        <item>सोना</item>
+        <item>स्वाद</item>
+        <item>जागना</item>
+        <item>चूमना</item>
+        <item>प्रेम</item>
+
+        <!--    <item>XXVI_Other_Verbs(bathe
+buy
+drip
+vomit
+name
+)</item>-->
+        <item>नहाना</item>
+        <item>खरीदना</item>
+        <item>टपकना</item>
+        <item>उलटी करना </item>
+        <item>नाम</item>
+
+
+    </string-array>
+    <string-array name="XXVII_Adjectives__Array_List_12">
+
+        <!--    <item>XXVII_Adjectives(all
+        bad
+        big
+        dry
+        few
+        good
+        honest
+        new
+        old
+        strength
+        thick
+        warm
+        )</item>-->
+        <item>सब</item>
+
+
+        <item>बुरा</item>
+        <item>बड़ा</item>
+        <item>सूखा</item>
+        <item>कुछ</item>
+        <item>अच्छा</item>
+        <item>ईमानदार</item>
+        <item>नई</item>
+        <item>पुरानी</item>
+
+        <item>मज़बूती</item>
+        <item>मोटा</item>
+        <item>गरम</item>
+    </string-array>
+    <string-array name="XXVIII_Functional_Words_Part_1__Array_List_13">
+        <!--        <item>XXVIII_Functional_Words()</item>-->
+        <item>अंत</item>
+        <item>दूर</item>
+        <item>बाएं</item>
+        <item>बीच मे</item>
+        <item>दाहिने</item>
+        <item>दुबारा</item>
+        <item>पहले</item>
+        <item>रोज़</item>
+        <item>दोपहर</item>
+        <item>संध्या</item>
+        <item>जल्दी</item>
+        <item>सुबह</item>
+        <item>रात्रि</item>
+        <item>आज</item>
+        <item>कल</item>
+        <item>कल</item>
+        <item>बीच में</item>
+        <item>के लिए</item>
+        <item>से</item>
+        <item>वह</item>
+        <item>यहाँ</item>
+        <!--   20 words     <item></item>-->
+        <!--        <item>40 words</item>-->
+
+
+    </string-array>
+    <string-array name="XXIX_Mixed_Words_Part_2__Array_List_14">
+        <!--    <item>21 to 40 part 2</item>-->
+        <item>उसके</item>
+        <item>कैसे</item>
+        <item>मैं</item>
+        <item>यह </item>
+        <item>इसके लिए</item>
+        <item>जैसे</item>
+        <item>मेरा</item>
+        <item>हमारा</item>
+        <item>नहीं</item>
+        <item>इसलिए</item>
+        <item>कि</item>
+        <item>उन</item>
+        <item>वहाँ</item>
+        <item>वे</item>
+        <item>उनके</item>
+        <item>इन</item>
+        <item>हम</item>
+        <item>क्या</item>
+
+        <item>कब</item>
+        <item>कहाँ</item>
+    </string-array>
+    <string-array name="XXIX_Mixed_Words_Part_3__PLus__XXIX_Mixed_Words__Array_List_15">
+        <!--        <item>41 to end</item>-->
+
+        <item>कौन </item>
+        <item>किसका</item>
+        <item>तुम</item>
+        <item>आपका</item>
+        <item>साल</item>
+        <item>और</item>
+        <item>अगर</item>
+        <item>अंदर</item>
+        <!--        <item>XXIX. Mixed Words</item>        -->
+        <item>पूर्वज </item>
+        <item>जीजा</item>
+        <item>चूहा</item>
+        <item>नाभि</item>
+    </string-array>
+
+    <string-array name="Definition_Array_List_1">
+        <item>होयो</item>
+        <item>तोरोए</item>
+        <item>रीमील</item>
+        <item>राबंग</item>
+        <item>नुबह</item>
+        <item>ओते सीरमा</item>
+        <item>ग्रहण</item>
+        <item>सेन्गल</item>
+        <item>कोवासी</item>
+        <item>बीर</item>
+        <item>बूरू</item>
+        <item>आरील</item>
+        <item>होरा</item>
+        <item>चानदुः</item>
+        <item>बुरु</item>
+        <item>गामा</item>
+        <item>गाड़ा</item>
+        <item>संडका</item>
+        <item>गितिल</item>
+        <item>सीरमा</item>
+        <item>आरील</item>
+        <item>इपिल</item>
+        <item>दिरी</item>
+        <item>सींगी</item>
+        <item>दाः</item>
+        <item>होयो</item>
+        <item>सान</item>
+    </string-array>
+    <!--     Def 2-->
+    <string-array name="Definition_Array_List_2">
+        <item>होन</item>
+        <item>कोड़ा होन</item>
+        <item>नवा कोन्या</item>
+        <item>हागा</item>
+        <item>होन</item>
+        <item>कुड़ी होन</item>
+        <item>आपु</item>
+        <item>सोन्गे</item>
+        <item>कुड़ी</item>
+        <item>कोड़ा</item>
+        <item>कोड़ा</item>
+        <item>कोड़ा</item>
+        <item>अरंडी</item>
+        <item>ममु</item>
+        <item>यो</item>
+        <item>हड़ाम होडो</item>
+        <item>उच्च</item>
+        <item>मोट</item>
+        <item>जाला</item>
+        <item>दाई</item>
+        <item>हिलि</item>
+        <item>कोड़ा होन</item>
+        <item>कुड़ी</item>
+        <item>कुड़ी</item>
+    </string-array>
+
+
+    <string-array name="Definition_Array_List_3">
+        <!-- Def 3-->
+        <item>मुई</item>
+        <item>चिड़ी</item>
+        <item>बिलाई</item>
+        <item>सांडी</item>
+        <item>उरिहि</item>
+        <item>कारकोम</item>
+        <item>सेता</item>
+        <item>सीम जारोम</item>
+        <item>हाकू</item>
+        <item>आपीर</item>
+        <item>तुयु</item>
+        <item>मेरोम</item>
+        <item>सदोम</item>
+        <item>सीकू</item>
+        <item>बान्द्रा</item>
+        <item>चालोम</item>
+        <item>होरो</item>
+    </string-array>
+
+    <!-- Def 4-->
+    <string-array name="Definition_Array_List_4">
+        <item>कामी</item>
+        <item>लाई</item>
+        <item>मायोम</item>
+        <item>होरमो</item>
+        <item>जन्ग</item>
+        <item>कूराम</item>
+        <item>लूतूर</item>
+        <item>मेद</item>
+        <item>रुवा</item>
+        <item>जीलु</item>
+        <item>काटा</item>
+        <item>ऊब</item>
+        <item>तीह</item>
+        <item>भो</item>
+        <item>काटा</item>
+        <item>मोचा</item>
+        <item>मुहु</item>
+        <item>डाटा</item>
+    </string-array>
+
+    <!-- Def 5-->
+    <string-array name="Definition_Array_List_5">
+        <item>जो</item>
+        <item>दारू</item>
+        <item>तोवा</item>
+        <item>बुलुंग</item>
+        <item>सुकूल</item>
+        <item>मंडी</item>
+        <item>चौली</item>
+        <item>लीजः</item>
+        <item>रुतु</item>
+        <item>डांडाह</item>
+        <item>दुवर</item>
+        <item>ओरह</item>
+        <item>सिरमा</item>
+        <item>बयर</item>
+        <item>भीति</item>
+        <item>कुंआ रा दाह</item>
+    </string-array>
+    <!-- Def 6-->
+    <string-array name="Definition_Array_List_6">
+        <item>माद:</item>
+        <item>केरा</item>
+        <item>बेंगरा</item>
+        <item>हड़ाद</item>
+        <item>नारिकल</item>
+        <item>बाहा</item>
+        <item>जो</item>
+        <item>बगइचा</item>
+        <item>तासँ</item>
+        <item>तामरस</item>
+        <item>कंठारा</item>
+        <item>सकम</item>
+        <item>ऊली</item>
+        <item>बाबा</item>
+        <item>सीयूह</item>
+        <item>सीबील</item>
+        <item>दारु</item>
+    </string-array>
+    <!-- Def 7-->
+    <string-array name="Definition_Array_List_7">
+        <item>कामीया</item>
+        <item>पीड़ी</item>
+        <item>हेंदे</item>
+        <item>जाला</item>
+        <item>राबांग</item>
+        <item>हरयिर</item>
+        <item>गरम</item>
+        <item>मस्कल</item>
+        <item>आराह</item>
+        <item>सीबील</item>
+        <item>पुण्डी</item>
+        <item>ससंग</item>
+        <item>रेंगेहे</item>
+        <item>दूलड़</item>
+        <item>हसु</item>
+    </string-array>
+    <!-- Def 8-->
+    <string-array name="Definition_Array_List_8">
+        <item>दुश्मन</item>
+        <item>ऋणी</item>
+        <item>हिसिर</item>
+        <item>बोंगा</item>
+        <item>ईनुंग</item>
+        <item>रुतु</item>
+        <item>पीतल</item>
+        <item>सोना</item>
+        <item>टाका</item>
+        <item>चांदी</item>
+        <item>मोएद</item>
+        <item>बारीया</item>
+        <item>उपनिय</item>
+
+
+        <item>हाद</item>
+        <item>पड़ाः</item>
+
+        <item>ओपता</item>
+        <item>ओपता</item>
+
+        <item>साड़िम</item>
+        <item>दुरंग</item>
+    </string-array>
+
+    <!-- Def 9-->
+    <string-array name="Definition_Array_List_9">
+        <item>बंधाओ</item>
+        <item>ओरोंग</item>
+        <item>रपुद</item>
+        <item>जलाओ</item>
+        <item>साब</item>
+        <item>में</item>
+        <item>थावाह</item>
+        <item>डालिम</item>
+        <item>साब</item>
+        <item>तिरिंग</item>
+        <item>चाटेह</item>
+        <item>बाई</item>
+        <item>होलेः</item>
+        <item>उठायेम</item>
+        <item>ईनुंग</item>
+        <item>रचाह</item>
+        <item>ऊदूर</item>
+        <item>साजु</item>
+        <item>अखरिंग</item>
+        <item>हानदेद</item>
+        <item>बेए</item>
+        <item>मो</item>
+        <item>चगाड़</item>
+        <item>गीड़ि</item>
+        <item>गासर</item>
+        <item>पोछाओ</item>
+        <item>कामी</item>
+    </string-array>
+    <!-- Def 10-->
+    <string-array name="Definition_Array_List_10">
+        <item>हिजुहु</item>
+        <item>हड़गुन</item>
+        <item>आवेम</item>
+        <item>रकाब</item>
+        <item>हिजुहु</item>
+        <item>सुसुन</item>
+        <item>नीर</item>
+        <item>नाम</item>
+        <item>बिरिद</item>
+        <item>एम</item>
+        <item>जु</item>
+        <item>कुदाओ</item>
+        <item>नीर</item>
+        <item>कूल</item>
+        <item>फिसलाओ</item>
+        <item>तिंगू</item>
+        <item>ईदी</item>
+        <item>ऊसाड़</item>
+        <item>सेन</item>
+
+
+        <item>सीऊ</item>
+        <item>नाकिः</item>
+        <item>गुपि</item>
+        <item>एम</item>
+        <item>तोवा</item>
+        <item>नेल</item>
+        <item>हेर</item>
+
+
+        <item>हाब</item>
+        <item>इसिन</item>
+        <item>नू</item>
+        <item>जोम</item>
+        <item>आजोम</item>
+        <item>चोपोएह</item>
+        <item>बंधाओ</item>
+        <item>तुसिंग</item>
+    </string-array>
+    <!-- Def 11-->
+    <string-array name="Definition_Array_List_11">
+        <item>कुली</item>
+        <item>हकाओ</item>
+        <item>काजी</item>
+        <item>कौरी</item>
+        <item>लिखना</item>
+
+        <item>गोएह</item>
+        <item>तैन</item>
+        <item>कमाओ</item>
+        <item>ऊकू</item>
+        <item>जोगाओ</item>
+        <item>दुब</item>
+        <item>होका</item>
+
+        <item>मो</item>
+
+        <item>सरीह</item>
+        <item>सिखाओ</item>
+        <item>रापुध</item>
+
+        <item>राः</item>
+        <item>बोरो</item>
+        <item>आयुम</item>
+        <item>लांदा</item>
+        <item>पढ़ाओ</item>
+        <item>दुरूम</item>
+        <item>चाका</item>
+        <item>बिरिद</item>
+        <item>चोएह</item>
+        <item>दूलड़</item>
+
+        <item>डेबेल</item>
+        <item>किरिंग</item>
+        <item>जोरो</item>
+        <item>ऊसाड़</item>
+        <item>नुतुम</item>
+    </string-array>
+    <!-- Def 12-->
+    <string-array name="Definition_Array_List_12">
+
+
+        <item>सोबेर</item>
+        <item>का मज़ा </item>
+        <item>बोडे</item>
+        <item>रोहोड़</item>
+        <item>कटि</item>
+        <item>बेस</item>
+        <item>सारती</item>
+        <item>नावा</item>
+        <item>पूर्णा</item>
+        <item>पेरेह</item>
+        <item>मोट</item>
+        <item>लोलो</item>
+    </string-array>
+
+    <!-- Def 13-->
+    <string-array name="Definition_Array_List_13">
+        <item>छाबा</item>
+        <item>संगीन</item>
+        <item>बाया सा:</item>
+        <item>थाला</item>
+        <item>दाया सा:</item>
+        <item>मोडसा</item>
+        <item>सीदा</item>
+        <item>रोज गी</item>
+        <item>हूला</item>
+        <item>सिंगी उतर</item>
+        <item>सेकड़ा</item>
+        <item>सेतह:</item>
+        <item>निदा</item>
+        <item>तिसिंग</item>
+        <item>गापा</item>
+        <item>होला</item>
+        <item>थाला</item>
+        <item>लाई</item>
+        <item>साह</item>
+        <item>इन्ही</item>
+        <item>नेताः</item>
+    </string-array>
+    <!-- Def 14-->
+    <string-array name="Definition_Array_List_14">
+        <item>इन्हिया</item>
+        <item>चिल्का</item>
+        <item>आइंग</item>
+        <item>नेया</item>
+        <item>नेया ते</item>
+        <item>लेका</item>
+        <item>आइंग आह</item>
+        <item>आलेयाः</item>
+        <item>काहा</item>
+        <item>ऐनालाई</item>
+        <item>हेना</item>
+        <item>एनाको</item>
+        <item>हेनताः</item>
+        <item>इन्कु</item>
+        <item>इन्कुवः</item>
+        <item>नेया को</item>
+        <item>आबू</item>
+        <item>चिन्ह</item>
+        <item>चिमता</item>
+        <item>ओकतह</item>
+    </string-array>
+    <!-- Def 15-->
+    <string-array name="Definition_Array_List_15">
+        <item>ओकोए</item>
+        <item>ओकोयः</item>
+        <item>आम</item>
+        <item>अमा</item>
+        <item>साल</item>
+        <item>ओडोह</item>
+        <item>एन्का रे</item>
+        <item>रे</item>
+
+        <item>हड़ाम होरो</item>
+        <item>इरिल कोड़ा</item>
+        <item>चुटु</item>
+        <item>बूटी</item>
+    </string-array>
+
 </resources>

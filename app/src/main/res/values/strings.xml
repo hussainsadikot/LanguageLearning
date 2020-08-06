@@ -6,8 +6,843 @@
     <string name="open_drawer">Open Drawer</string>
     <string name="close_drawer">Close Drawer</string>
 
+    <string name="english" translatable="false">English</string>
     <string name="drawer_title">TriLingo</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="create_an_account_to_save_your_progress_n_it_s_free_and_only_takes_a_minute">Create an account to save your progress\n It\'s free and only takes a minute! ;)</string>
+    <string name="practice_this_topic"><![CDATA[Practice this topic ->]]></string>
+    <string name="create_account">Create account</string>
+    <string name="or">or</string>
+    <string name="sign_in">Sign In</string>
+    <string name="i_know_button"><![CDATA[I Know ->]]></string>
+    <string name="no_i_don_t_know"><![CDATA[No I don\'t Know ->]]></string>
+
+    <string-array name="Level_I_Earth_Sky_and_Water__Array_List_1">
+        <item>air</item>
+        <item>ashes</item>
+        <item>cloud</item>
+        <item>cold</item>
+        <item>darkness</item>
+        <item>earth</item>
+        <item>eclipse</item>
+        <item>fire</item>
+        <item>fog</item>
+        <item>forest</item>
+        <item>hill</item>
+        <item>ice</item>
+        <item>path</item>
+        <item>moon</item>
+        <item>mountain</item>
+        <item>rain</item>
+        <item>river</item>
+        <item>road</item>
+<!--        <item>moon</item>-->
+        <item>sand</item>
+        <item>sky</item>
+        <item>snow</item>
+        <item>star</item>
+        <item>stone</item>
+        <item>sun</item>
+        <item>water</item>
+        <item>wind</item>
+        <item>wood</item>
+    </string-array>
+    <string-array name="LEVEL_II_mankind_sex_family_and_relationships__Array_List_2">
+        <item>baby</item>
+        <item>boy</item>
+        <item>bride</item>
+        <item>brother /elder(e.)/younger(y.)</item>
+        <item>child</item>
+        <item>daughter</item>
+        <item>father</item>
+        <item>friend</item>
+        <item>girl</item>
+        <item>husband</item>
+        <item>male</item>
+        <item>man</item>
+        <item>marriage</item>
+        <item>maternal uncle</item>
+        <item>mother</item>
+        <item>old man</item>
+        <item>tall</item>
+        <item>fat</item>
+        <item>blind</item>
+        <item>sister /elder(e.) /younger(y.)</item>
+        <item>sister-in-law</item>
+        <item>son</item>
+        <item>wife</item>
+        <item>woman</item>
+         </string-array>
+
+    <string-array name="LEVEL_III_Animals_Bird_etc__Array_List_3">
+    <item>ant</item>
+    <item>bird</item>
+    <item>cat</item>
+    <item>cock</item>
+    <item>cow</item>
+    <item>crab</item>
+    <item>dog</item>
+    <item>egg</item>
+    <item>fish</item>
+    <item>fly</item>
+    <item>fox</item>
+    <item>goat</item>
+    <item>horse</item>
+    <item>louse</item>
+    <item>monkey</item>
+    <item>tail</item>
+    <item>tortoise</item>
+    </string-array>
+
+
+    <string-array name="LEVEL_IV_Body_parts_Bodily_functions_and_conditions_etc__Array_List_4">
+        <item>work</item>
+    <item>belly</item>
+    <item>blood</item>
+    <item>body</item>
+    <item>bone</item>
+    <item>chest</item>
+    <item>ear</item>
+    <item>eye</item>
+    <item>fever</item>
+    <item>flesh</item>
+    <item>foot</item>
+    <item>hair</item>
+    <item>hand</item>
+    <item>head</item>
+    <item>leg</item>
+    <item>mouth</item>
+    <item>nose</item>
+    <item>tooth</item>
+    </string-array>
+
+
+
+
+    <string-array name="LEVEL_V_Foods_Drinks_Cooking_and_Utencils_etc_LEVEL_VI_Clothing_House_Parts_of_House_etc__Array_List_5">
+        <item>fruit</item>
+        <item>liquor</item>
+        <item>milk</item>
+        <item>salt</item>
+        <item>smoke</item>
+        <item>rice- cooked</item>
+        <item>rice- uncooked</item>
+        <item>cloth</item>
+    <item>flute</item>
+    <item>stickstick</item>
+    <item>door</item>
+    <item>house</item>
+    <item>roof</item>
+    <item>rope</item>
+    <item>wall</item>
+    <item>well water</item>
+    </string-array>
+
+    <string-array name="LEVEL_VII_Trees_Vegetables_Fruits_and_Flowers__Array_List_6">
+        <item>bamboo</item>
+    <item>banana</item>
+    <item>brinjal</item>
+    <item>chilly</item>
+    <item>coconut</item>
+    <item>flower</item>
+    <item>fruit</item>
+    <item>garden</item>
+    <item>grass</item>
+    <item>guava</item>
+    <item>jack fruit</item>
+    <item>leaf</item>
+    <item>mango</item>
+    <item>paddy</item>
+    <item>plough</item>
+    <item>sweet</item>
+    <item>tree</item>
+    </string-array>
+
+    <string-array name="VIII_Profession_and_Professional_equipments___IX_Sense_perception_Emotion_and_temperament_etc__Array_List_7">
+
+
+
+        <item> labourer</item>
+    <item>farm land</item>
+
+        <item>black</item>
+    <item>blind</item>
+    <item>coldness</item>
+    <item>green</item>
+    <item>hot</item>
+    <item>light</item>
+    <item>red</item>
+    <item>sweet</item>
+    <item>white</item>
+    <item>yellow</item>
+    <item>hungry</item>
+    <item>love</item>
+    <item>pain</item>
+    </string-array>
+
+    <string-array name="XI_War_Law__XII_Religion_Entertainment_and_Metals_etc__XV_Instrument_Verbs__XVI_Verbs_of_Fighting__XVII_Music_Verbs__Array_List_8">
+        <item>enemy</item>
+        <item>debt</item>
+
+
+        <item>garland</item>
+    <item>worship</item>
+    <item>games</item>
+    <item>flute</item>
+    <item>brass</item>
+    <item>gold</item>
+    <item>money</item>
+    <item>silver</item>
+
+
+
+
+    <item>cut</item>
+    <item>split (wood)</item>
+
+
+
+
+    <item>fight</item>
+    <item>quarrel</item>
+
+
+
+
+
+        <item>beat (a drum )</item>
+    <item>sing</item>
+    </string-array>
+
+    <string-array name="XIV_Physical_activities_verbs__Array_List_9">
+ <item>bind</item>
+    <item>blow</item>
+    <item>break (stick,pot, etc.)</item>
+    <item>burn</item>
+    <item>catch (chase and catch an animal, something thrown)</item>
+    <item>do (non-specific verb)</item>
+    <item>fall</item>
+    <item>hit</item>
+    <item>hold</item>
+    <item>lean (against something)</item>
+    <item>lick</item>
+    <item>make</item>
+    <item>open (a door, eyes, bag)</item>
+    <item>pick</item>
+    <item>play</item>
+    <item>pull</item>
+    <item>push</item>
+        <item>put</item>
+        <item>sell</item>
+        <item>shut</item>
+        <item>spit</item>
+        <item>swell</item>
+        <item>tear</item>
+        <item>throw</item>
+        <item>wash</item>
+        <item>wipe</item>
+        <item>work</item>
+    </string-array>
+
+    <string-array name="XVIII_Motion_Verbs__XIX_Occupational_Verbs__XX_Culinari_Verbs__Array_List_10">
+
+        <item>arrive</item>
+    <item>ascend</item>
+    <item>bring</item>
+    <item>climb</item>
+    <item>come</item>
+    <item>dance</item>
+    <item>escape</item>
+    <item>get</item>
+    <item>get up</item>
+    <item>give</item>
+    <item>go</item>
+    <item>jump</item>
+    <item>run</item>
+    <item>send</item>
+    <item>slip</item>
+    <item>stand up</item>
+    <item>take</item>
+    <item>vomit</item>
+    <item>walk</item>
+
+<!--XIX. Occupational Verbs  6 words  -->
+        <item>cultivate</item>
+    <item>comb</item>
+    <item>graze</item>
+    <item>lend</item>
+    <item>milk</item>
+    <item>saw</item>
+    <item>sow (seed )</item>
+
+<!--    <item>XX_Culinari_Verbs 8</item>-->
+
+        <item>bite</item>
+    <item>cook</item>
+    <item>drink</item>
+    <item>eat</item>
+    <item>feed</item>
+    <item>suck</item>
+    <item>tie</item>
+        <item>wear</item>
+    </string-array>
+
+    <string-array name="XXI_Communication_Verbs__XXII_Stationary_Verbs__XXIII_In_cohetive_Verbs__XXIV_Cognitive_Verbs__XXV_Sensory_and_Emotive_Verbs__XXVI_Other_Verbs__Array_List_11">
+
+<!--    <item>XXI_Communication_Verbs (ask,call,say,shout,write)</item>-->
+    <item>ask</item>
+    <item>call</item>
+    <item>say</item>
+    <item>shout</item>
+    <item>write</item>
+ <!--    <item>XXII_Stationary_Verbs(die
+live (at )
+earn
+hide
+keep
+sit
+stop
+)</item>-->
+        <item>die</item>
+    <item>live (at )</item>
+    <item>earn</item>
+    <item>hide</item>
+    <item>keep</item>
+    <item>sit</item>
+    <item>stop</item>
+
+<!--    <item>XXIII_In_cohetive_Verbs(swell)</item>-->
+    <item>swell</item>
+<!--    <item>XXIV_Cognitive_Verbs (know,learn,break)</item>-->
+
+    <item>know</item>
+    <item>learn</item>
+    <item>break</item>
+
+<!--    <item>XXV_Sensory_and_Emotive_Verbs(cry (weep )
+fear
+hear
+laugh/ smile
+read
+sleep, lie
+taste
+wake up
+kiss
+love
+)</item>-->
+        <item>cry(weep)</item>
+    <item>fear</item>
+    <item>hear</item>
+    <item>laugh/ smile</item>
+    <item>read</item>
+    <item>sleep, lie</item>
+    <item>taste</item>
+    <item>wake up</item>
+    <item>kiss</item>
+    <item>love</item>
+
+        <!--    <item>XXVI_Other_Verbs(bathe
+buy
+drip
+vomit
+name
+)</item>-->
+        <item>bath</item>
+        <item>buy</item>
+        <item>drip</item>
+        <item>vomit</item>
+        <item>name</item>
+
+
+    </string-array>
+    <string-array name="XXVII_Adjectives__Array_List_12">
+
+<!--    <item>XXVII_Adjectives(all
+bad
+big
+dry
+few
+good
+honest
+new
+old
+strength
+thick
+warm
+)</item>-->
+    <item>all</item>
+    <item>bad</item>
+    <item>big</item>
+    <item>dry</item>
+    <item>few</item>
+    <item>good</item>
+    <item>honest</item>
+    <item>new</item>
+    <item>old</item>
+
+    <item>strength</item>
+    <item>thick</item>
+    <item>warm</item>
+    </string-array>
+    <string-array name="XXVIII_Functional_Words_Part_1__Array_List_13">
+<!--        <item>XXVIII_Functional_Words()</item>-->
+        <item>end</item>
+        <item>far</item>
+        <item>left side</item>
+        <item>middle</item>
+        <item>right side/hand</item>
+        <item>again</item>
+        <item>before</item>
+        <item>daily</item>
+        <item>day</item>
+        <item>evening</item>
+        <item>fast/quick</item>
+        <item>morning</item>
+        <item>night</item>
+        <item>today</item>
+        <item>tomorrow</item>
+        <item>yesterday</item>
+        <item>between</item>
+        <item>for</item>
+        <item>from</item>
+        <item>he/she</item>
+        <item>here</item>
+        <!--   20 words     <item></item>-->
+        <!--        <item>40 words</item>-->
+
+
+    </string-array>
+    <string-array name="XXIX_Mixed_Words_Part_2__Array_List_14">
+<!--    <item>21 to 40 part 2</item>-->
+        <item>his/her</item>
+        <item>how</item>
+        <item>I</item>
+        <item>it / this</item>
+        <item>to it / to this</item>
+        <item>like</item>
+        <item>my</item>
+        <item>our</item>
+        <item>not</item>
+        <item>so / thus</item>
+        <item>that</item>
+        <item>those</item>
+        <item>there</item>
+        <item>they</item>
+        <item>their</item>
+        <item>these</item>
+        <item>we</item>
+        <item>what</item>
+        <item>when</item>
+        <item>where</item>
+    </string-array>
+    <string-array name="XXIX_Mixed_Words_Part_3__PLus__XXIX_Mixed_Words__Array_List_15">
+    <!--        <item>41 to end</item>-->
+
+    <item>who</item>
+    <item>whose</item>
+    <item>you</item>
+    <item>your</item>
+    <item>year</item>
+    <item>and</item>
+    <item>if</item>
+    <item>in</item>
+<!--        <item>XXIX. Mixed Words</item>        -->
+        <item>ancester</item>
+        <item>brother-in-Law</item>
+        <item>mouse</item>
+        <item>navel</item>
+
+    </string-array>
+    <string-array name="Definition_Array_List_1">
+
+        <item>Hooyo</item>
+        <item>Toroeh</item>
+        <item>Rimil</item>
+        <item>Rabang</item>
+        <item>Nubah</item>
+        <item>Oote sirma</item>
+        <item>Grahan</item>
+        <item>Sengel</item>
+        <item>Kowasi</item>
+        <item>Bir</item>
+        <item>Sereng</item>
+        <item>Aril</item>
+        <item>Hora</item>
+        <item>Chanduh</item>
+        <item>Buru</item>
+        <item>Gama</item>
+        <item>Gada</item>
+        <item>Sandaka</item>
+        <item>Gitil</item>
+        <item>Sirma</item>
+        <item>Aril</item>
+        <item>Epil</item>
+        <item>Diri</item>
+        <item>singi</item>
+        <item>Daah</item>
+        <item>Hooyo</item>
+        <item>Saan</item>
+
+    </string-array>
+    <string-array name="Definition_Array_List_2">
+
+<!-- Def 2-->
+        <item>Hon</item>
+        <item>Kora hon</item>
+        <item>Nawa Konya</item>
+        <item>Haga</item>
+        <item>Hon</item>
+        <item>Kuri hon</item>
+        <item>Apu</item>
+        <item>Songe</item>
+        <item>Kuri</item>
+        <item>Kora</item>
+        <item>Kora</item>
+        <item>Kora</item>
+        <item>Arandi</item>
+        <item>Mamu</item>
+        <item>Yo</item>
+        <item>Haram horo</item>
+        <item>Uch</item>
+        <item>Mot</item>
+        <item>Jala</item>
+        <item>Dai</item>
+        <item>Hili</item>
+        <item>Kora hon</item>
+        <item>Kudi</item>
+        <item>Kudi</item>
+
+    </string-array>
+    <string-array name="Definition_Array_List_3">
+        <!-- Def 3-->
+        <item>Mui</item>
+        <item>Chidi</item>
+        <item>Bilai</item>
+        <item>Sandi</item>
+        <item>Urihi</item>
+        <item>Karkom</item>
+        <item>Seta</item>
+        <item>Sim jarom</item>
+        <item>Haku</item>
+        <item>Apir</item>
+        <item>Tuyu</item>
+        <item>Merom</item>
+        <item>Sadom</item>
+        <item>Siku</item>
+        <item>Bandra</item>
+        <item>Chalom</item>
+        <item>Horo</item>
+    </string-array>
+    <string-array name="Definition_Array_List_4">
+        <!-- Def 4-->
+        <item>Kami</item>
+        <item>Lai</item>
+        <item>Mayom</item>
+        <item>Hormo</item>
+        <item>Jang</item>
+        <item>Kuram</item>
+        <item>Lutur</item>
+        <item>Med</item>
+        <item>Ruwa</item>
+        <item>Jilu</item>
+        <item>Kata</item>
+        <item>Uub</item>
+        <item>Tih</item>
+        <item>Bho</item>
+        <item>Kata</item>
+        <item>Mocha</item>
+        <item>Muhu</item>
+        <item>Data</item>
+
+    </string-array>
+    <string-array name="Definition_Array_List_5">
+        <!-- Def 5-->
+        <item>Jo</item>
+        <item>Daru</item>
+        <item>Towa</item>
+        <item>Bulung</item>
+        <item>Sukul</item>
+        <item>Mandi</item>
+        <item>Chauli</item>
+        <item>Lijah</item>
+        <item>Rutu</item>
+        <item>Dandaha</item>
+        <item>Duwar</item>
+        <item>Orah</item>
+        <item>Sirma</item>
+        <item>Bayar</item>
+        <item>Bhiti</item>
+        <item>Kuwa ra daha</item>
+    </string-array>
+    <string-array name="Definition_Array_List_6">
+        <!-- Def 6-->
+        <item>Maad</item>
+        <item>Kera</item>
+        <item>Bengra</item>
+        <item>Harad</item>
+        <item>Narikal</item>
+        <item>Baha</item>
+        <item>Jo</item>
+        <item>Bagaicha</item>
+        <item>Tasan</item>
+        <item>Tamras</item>
+        <item>Kanthara</item>
+        <item>Sakam</item>
+        <item>Uli</item>
+        <item>Baba</item>
+        <item>Siuhu</item>
+        <item>Sibil</item>
+        <item>Daru</item>
+
+    </string-array>
+    <string-array name="Definition_Array_List_7">
+
+        <!-- Def 7-->
+        <item>Kamiya</item>
+        <item>Pidi</item>
+        <item>Hende</item>
+        <item>Jala</item>
+        <item>Rabang</item>
+        <item>Haryer</item>
+        <item>Lolo</item>
+        <item>Maskal</item>
+        <item>Aaraaha</item>
+        <item>Sibil</item>
+        <item>Pundi</item>
+        <item>Sasang</item>
+        <item>Rengehe</item>
+        <item>Dular</item>
+        <item>Hasu</item>
+
+
+    </string-array>
+    <string-array name="Definition_Array_List_8">
+        <!-- Def 8-->
+        <item>Dushman</item>
+        <item>Rini</item>
+        <item>Hisir</item>
+        <item>Bonga</item>
+        <item>Enung</item>
+        <item>Rutu</item>
+        <item>Pital</item>
+        <item>Sona</item>
+        <item>Taka</item>
+        <item>Chandi</item>
+        <item>Moid</item>
+        <item>Bariya</item>
+        <item>Upaniya</item>
+
+        <item>Haad</item>
+        <item>Parah</item>
+
+        <item>Opta</item>
+        <item>Opta</item>
+
+        <item>Sadim</item>
+        <item>Durang</item>
+
+
+    </string-array>
+    <string-array name="Definition_Array_List_9">
+        <!-- Def 9-->
+        <item>Bandhao</item>
+        <item>Orong</item>
+        <item>Rapud</item>
+        <item>Jalao</item>
+        <item>Saab</item>
+        <item>Me</item>
+        <item>Thawah</item>
+        <item>Dalim</item>
+        <item>Saab</item>
+        <item>Tiring</item>
+        <item>Chateh</item>
+        <item>Bai</item>
+        <item>Holeh</item>
+        <item>Uthayem</item>
+        <item>Enung</item>
+        <item>Rachah</item>
+        <item>Udur</item>
+        <item>Saju</item>
+        <item>Akhring</item>
+        <item>Handed</item>
+        <item>Behe</item>
+        <item>Mo</item>
+        <item>chagar</item>
+        <item>Gidi</item>
+        <item>Gasar</item>
+        <item>Pochao</item>
+        <item>Kami</item>
+
+
+
+    </string-array>
+    <string-array name="Definition_Array_List_10">
+        <!-- Def 10-->
+        <item>Hijuhu</item>
+        <item>Hargun</item>
+        <item>Aawem</item>
+        <item>Rakab</item>
+        <item>Hijuhu</item>
+        <item>Susun</item>
+        <item>Nir</item>
+        <item>Naam</item>
+        <item>Birid</item>
+        <item>Em</item>
+        <item>Ju</item>
+        <item>Kudao</item>
+        <item>Nir</item>
+        <item>Kul</item>
+        <item>Phislao</item>
+        <item>Tingu</item>
+        <item>Eidi</item>
+        <item>Usaar</item>
+        <item>Sen</item>
+
+        <item>Siu</item>
+        <item>Nakihi</item>
+        <item>Gupi</item>
+        <item>Em</item>
+        <item>Towa</item>
+        <item>Nel</item>
+        <item>Her</item>
+
+        <item>Haab</item>
+        <item>Esin</item>
+        <item>Nu</item>
+        <item>Jom</item>
+        <item>Aajom</item>
+        <item>Chopoeh</item>
+        <item>Bandhao</item>
+        <item>Tusing</item>
+
+    </string-array>
+    <string-array name="Definition_Array_List_11">
+        <!-- Def 11-->
+        <item>Kuli</item>
+        <item>Hakao</item>
+        <item>Kaji</item>
+        <item>Kauri</item>
+        <item>Ol</item>
+
+        <item>Goeh</item>
+        <item>Tain</item>
+        <item>Kamao</item>
+        <item>Uku</item>
+        <item>Jogao</item>
+        <item>Dub</item>
+        <item>Hoka</item>
+
+        <item>Mo</item>
+
+        <item>Sarih</item>
+        <item>Sikhao</item>
+        <item>Rapudh</item>
+
+        <item>Raah</item>
+        <item>Boro</item>
+        <item>Aayum</item>
+        <item>Landa</item>
+        <item>Pdhao</item>
+        <item>Durum</item>
+        <item>Chaka</item>
+        <item>Birid</item>
+        <item>Choeh</item>
+        <item>Dular</item>
+
+
+        <item>Debel</item>
+        <item>Kiring</item>
+        <item>Joro</item>
+        <item>Usaar</item>
+        <item>Nutum</item>
+
+    </string-array>
+    <string-array name="Definition_Array_List_12">
+        <!-- Def 12-->
+
+        <item>Sober</item>
+        <item>Ka maja</item>
+        <item>Bode</item>
+        <item>Rohod</item>
+        <item>Kati</item>
+        <item>Bes</item>
+        <item>Saarti</item>
+        <item>Nawa</item>
+        <item>Purana</item>
+        <item>Pereh</item>
+        <item>Mot</item>
+        <item>Lolo</item>
+
+    </string-array>
+    <string-array name="Definition_Array_List_13">
+        <!-- Def 13-->
+        <item>Chaba</item>
+        <item>Sangin</item>
+        <item>Baya saha</item>
+        <item>Thala</item>
+        <item>Daya saha</item>
+        <item>Modasa</item>
+        <item>Sida</item>
+        <item>Roj gi</item>
+        <item>Hula</item>
+        <item>Singi utar</item>
+        <item>Sekda</item>
+        <item>Setaha</item>
+        <item>Nida</item>
+        <item>Tising</item>
+        <item>Gapa</item>
+        <item>Hola</item>
+        <item>Thala</item>
+        <item>Lai</item>
+        <item>Saha</item>
+        <item>Inhi</item>
+        <item>Netaha</item>
+
+
+    </string-array>
+    <string-array name="Definition_Array_List_14">
+        <!-- Def 14-->
+        <item>inhiya</item>
+        <item>Chilka</item>
+        <item>Aaing</item>
+        <item>Neya</item>
+        <item>Neya te</item>
+        <item>Leka</item>
+        <item>Aing ah</item>
+        <item>Aaleyah</item>
+        <item>Kaha</item>
+        <item>Enalai</item>
+        <item>Hena</item>
+        <item>Enako</item>
+        <item>Hentah</item>
+        <item>Inku</item>
+        <item>Inku wah</item>
+        <item>Neya ko</item>
+        <item>Aabu</item>
+        <item>Chinah</item>
+        <item>Chimta</item>
+        <item>oktah</item>
+    </string-array>
+    <string-array name="Definition_Array_List_15">
+        <!-- Def 15-->
+        <item>Okoye</item>
+        <item>Okoya</item>
+        <item>Aam</item>
+        <item>Amah</item>
+        <item>Saal</item>
+        <item>Oroho</item>
+        <item>Enka re</item>
+        <item>Re</item>
+
+        <item>Hadam horo</item>
+        <item>Iril Koda</item>
+        <item>Chutu</item>
+        <item>Buti</item>
+
+    </string-array>
+
+
+
 </resources>

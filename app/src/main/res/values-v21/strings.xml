@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="create_an_account_to_save_your_progress_n_it_s_free_and_only_takes_a_minute">Create an account to save your progress\n It\'s free and only takes a minute! ;)</string>
+    <string name="create_account">Create account</string>
+    <string name="or">or</string>
+    <string name="sign_in">Sign In</string>
+    <string name="i_know_button"><![CDATA[I Know ->]]></string>
+    <string name="no_i_don_t_know"><![CDATA[No I don\'t Know ->]]></string>
+</resources>

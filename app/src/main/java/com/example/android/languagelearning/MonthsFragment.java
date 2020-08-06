@@ -1,9 +1,13 @@
 package com.example.android.languagelearning;
 
+import android.animation.Animator;
+import android.animation.AnimatorInflater;
+import android.animation.AnimatorSet;
 import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.RequiresApi;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import android.text.TextUtils;
@@ -15,6 +19,9 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -23,7 +30,7 @@ import java.util.Random;
 
 public class MonthsFragment extends Fragment {
     private Button iknow, idont, reveal;
-    private TextView textView_title, textView_definition, tv_tag, tvProgressMaster, tvProgressLearning, tvProgressReview;
+    private TextView textView_title_front,textView_title_back, textView_definition, tv_tag, tvProgressMaster, tvProgressLearning, tvProgressReview;
     private ProgressBar progressBarReview, progressBarMaster, progressBarLearning;
     //    private GlobalListOfWordAndDefinition currentGlobalWord;
     private String global= "Global";
@@ -41,6 +48,9 @@ public class MonthsFragment extends Fragment {
     private Map<String, String> map = new HashMap<>();
     private String mTag= "Global";
 
+    private CardView cardFront,cardBack;
+    private boolean flipped;
+
 
 
 
@@ -54,6 +64,9 @@ public class MonthsFragment extends Fragment {
             map.put(words[i], mTag);
         }
         // Master Progress Initial Settings
+        cardFront = view.findViewById(R.id.front_card);
+        cardBack  = view.findViewById(R.id.back_card );
+
         progressBarMaster = view.findViewById(R.id.progressbar_master);
         tvProgressMaster = view.findViewById(R.id.tv_progress_master);
         tvProgressMaster.setText("You have Mastered 0 out of 12");
@@ -75,48 +88,48 @@ public class MonthsFragment extends Fragment {
         tvProgressReview.setText("You have review 0 out of 12");
 
 
-        textView_title = view.findViewById(R.id.tv_word_title);
+        textView_title_front = view.findViewById(R.id.tv_word_title_front);
+        textView_title_back = view.findViewById(R.id.tv_word_title_back);
+
+//        textView_title = view.findViewById(R.id.tv_word_title);
         textView_definition = view.findViewById(R.id.tv_definition_word);
-        reveal = view.findViewById(R.id.reveal_button);
+        reveal = view.findViewById(R.id.reveal_button_front);
         idont = view.findViewById(R.id.i__dont_know_button);
         iknow = view.findViewById(R.id.i_know_button);
-        textView_definition.setVisibility(View.GONE);
-        idont.setVisibility(View.GONE);
-        iknow.setVisibility(View.GONE);
 
         reveal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                idont.setVisibility(View.VISIBLE);
-                iknow.setVisibility(View.VISIBLE);
-                textView_definition.setVisibility(View.VISIBLE);
-                reveal.setVisibility(View.GONE);
+                flip();
             }
         });
         iknow.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onClick(View view) {
-                String iknowword = textView_title.getText().toString();
+                String iknowword = textView_title_back.getText().toString();
 //                findIndex(globalListOfWordAndDefinition.globalWord,iknowword);
                 ChangeTag(iknowword);
 
 //                Toast.makeText(MainActivity.this, "You know this word Fantastic", Toast.LENGTH_SHORT).show();
-
-
-                revealNextWord();
-
                 updateNextWordfromGlobal();
+
+                flipReverse();
+
+
             }
         });
         idont.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String idontknowword = textView_title.getText().toString();
+                String idontknowword = textView_title_back.getText().toString();
                 ChangeTagForIDont(idontknowword);
 //                Toast.makeText(MainActivity.this, "You don't know this word, cool", Toast.LENGTH_SHORT).show();
-                revealNextWord();
+
                 updateNextWordfromGlobal();
+                flipReverse();
+
+
             }
         });
 
@@ -126,25 +139,79 @@ public class MonthsFragment extends Fragment {
 
         return view;
 
+    }
+    private void flipReverse() {
+
+        cardFront.setVisibility(View.GONE);
+        cardBack.setVisibility(View.GONE);
+        if (!(this.flipped)) return;
+        this.flipped = false;
+
+        AnimatorSet animationOut = (AnimatorSet) AnimatorInflater.loadAnimator(this.getContext(), R.animator.card_flip_in_animator);
+        AnimatorSet animationIn  = (AnimatorSet) AnimatorInflater.loadAnimator(this.getContext(), R.animator.card_flip_out_animator);
+//        cardBack.setVisibility(View.VISIBLE);
+        animationOut.setTarget(this.cardFront);
+        animationIn.setTarget(this.cardBack);
+        animationOut.start();
+        animationIn.start();
 
 
+        animationIn.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animator) {
+
+                cardFront.setVisibility(View.GONE);
+                cardBack.setVisibility(View.GONE);
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animator) {
+
+                cardFront.setVisibility(View.VISIBLE);
+                cardBack.setVisibility(View.GONE);
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animator) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animator) {
+
+            }
+        });
 
 
     }
-    private void revealNextWord() {
-        textView_definition.setVisibility(View.GONE);
-        idont.setVisibility(View.GONE);
-        iknow.setVisibility(View.GONE);
 
-        reveal.setVisibility(View.VISIBLE);
+    private void flip() {
+        if (this.flipped) return;
+        this.flipped = true;
+
+        AnimatorSet animationOut = (AnimatorSet) AnimatorInflater.loadAnimator(this.getContext(), R.animator.card_flip_out_animator);
+        AnimatorSet animationIn  = (AnimatorSet) AnimatorInflater.loadAnimator(this.getContext(), R.animator.card_flip_in_animator);
+        cardBack.setVisibility(View.VISIBLE);
+        animationOut.setTarget(this.cardFront);
+        animationIn.setTarget(this.cardBack);
+
+
+        animationOut.start();
+        animationIn.start();
+
+
+//        cardFront.setVisibility(View.GONE);
+
     }
+
 
     private void updateNextWordfromGlobal() {
 
 
         if (mGlobalWordNumber == words.length) {
             mGlobalWordNumber = 0;
-            textView_title.setText(words[mGlobalWordNumber]);
+            textView_title_front.setText(words[mGlobalWordNumber]);
+            textView_title_back.setText(words[mGlobalWordNumber]);
             textView_definition.setText(words_definition[mGlobalWordNumber]);
 
         } else {
@@ -152,7 +219,8 @@ public class MonthsFragment extends Fragment {
 //            int upperbound = words.length;
 //            //generate random values from 0-12
 //            int int_random = rand.nextInt(upperbound);
-            textView_title.setText(words[mGlobalWordNumber]);
+            textView_title_front.setText(words[mGlobalWordNumber]);
+            textView_title_back.setText(words[mGlobalWordNumber]);
             textView_definition.setText(words_definition[mGlobalWordNumber]);
         }
 
@@ -173,7 +241,7 @@ public class MonthsFragment extends Fragment {
 
             }
 //            globalListOfWordAndDefinition.setTag("Master",indexOfGlobalTag);
-            Toast.makeText(getActivity(), "Tag changed from Global to Learning", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(getActivity(), "Tag changed from Global to Learning", Toast.LENGTH_SHORT).show();
 
             tv_tag.setText(map.get(idontknowword));
         } else if (TextUtils.equals(map.get(idontknowword), "Master")) {

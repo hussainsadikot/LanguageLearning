@@ -41,7 +41,7 @@ public class LanguageSelectionActivity extends AppCompatActivity {
         listViewLanguageSelection = findViewById(R.id.language_list);
 
         final String[] lis_language = new String[]{"English", "Hindi", "Malayalam", "Gujarati"};
-        arrayListLanguages.add("English");
+        arrayListLanguages.add(getResources().getString(R.string.english));
         arrayListLanguages.add("Hindi");
         arrayListLanguages.add("Malayalam");
         arrayListLanguages.add("Gujarati");
