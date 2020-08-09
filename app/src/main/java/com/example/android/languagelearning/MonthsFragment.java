@@ -59,7 +59,7 @@ public class MonthsFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_word_display, container, false);
-        tv_tag = view.findViewById(R.id.tv_word_tag);
+//        tv_tag = view.findViewById(R.id.tv_word_tag);
         for (int i = 0; i <= words.length - 1; i++) {
             map.put(words[i], mTag);
         }

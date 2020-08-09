@@ -17,6 +17,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.MenuItem;
 import android.widget.Toast;
 
@@ -25,7 +26,9 @@ import com.google.android.material.navigation.NavigationView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends AppCompatActivity
+//        implements NavigationView.OnNavigationItemSelectedListener
+{
     NavigationView navigationViewMain;
     Toolbar toolbarMain;
     RecyclerView recyclerView;
@@ -45,40 +48,39 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         toolbarMain =  findViewById(R.id.toolbar);
 //        setSupportActionBar(toolbarMain);
 //
-        drawerLayout = findViewById(R.id.drawer_layout_main);
+//        drawerLayout = findViewById(R.id.drawer_layout_main);
 //        toolbarMain = findViewById(R.id.toolbar_main);
 //        setSupportActionBar(toolbarMain);
-        ActionBarDrawerToggle toggle1 = new ActionBarDrawerToggle(this, drawerLayout, toolbarMain, R.string.open_drawer, R.string.close_drawer);
-        drawerLayout.addDrawerListener(toggle1);
-        toggle1.syncState();
+//        ActionBarDrawerToggle toggle1 = new ActionBarDrawerToggle(this, drawerLayout, toolbarMain, R.string.open_drawer, R.string.close_drawer);
+//        drawerLayout.addDrawerListener(toggle1);
+//        toggle1.syncState();
 //        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        navigationViewMain = findViewById(R.id.nav_view_main);
-        navigationViewMain.setNavigationItemSelectedListener(this);
+//        navigationViewMain = findViewById(R.id.nav_view_main);
+//        navigationViewMain.setNavigationItemSelectedListener(this);
 
-        prefs = getSharedPreferences("com.mycompany.myAppName", MODE_PRIVATE);
-
+//        prefs = getSharedPreferences("com.mycompany.myAppName", MODE_PRIVATE);
+//        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+//        String desiredPreference =  sharedPreferences.getString("PROGRESS_MASTER_1", "progress_master_1");
         recyclerView = findViewById(R.id.recycler_view);
         topics = new ArrayList<>();
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        topics.add(new Topics(0, "Names of Week Days", "0 of 7  words mastered"));
-        topics.add(new Topics(1, "Names of Months", "0 of 12  words mastered"));
-        topics.add(new Topics(2, "Words List 1", "0 of 50  words mastered"));
-        topics.add(new Topics(3, "Words List 2", "0 of 50  words mastered"));
-        topics.add(new Topics(4, "Words List 3", "0 of 50  words mastered"));
-        topics.add(new Topics(5, "Words List 4", "0 of 50  words mastered"));
-        topics.add(new Topics(6, "Words List 5", "0 of 50  words mastered"));
-        topics.add(new Topics(7, "Words List 6", "0 of 50  words mastered"));
-        topics.add(new Topics(8, "Words List 7", "0 of 50  words mastered"));
-        topics.add(new Topics(9, "Words List 8", "0 of 50  words mastered"));
-        topics.add(new Topics(10, "Words List 9", "0 of 50  words mastered"));
-        topics.add(new Topics(11, "Words List 10", "0 of 50  words mastered"));
-        topics.add(new Topics(12, "Words List 11", "0 of 50  words mastered"));
-        topics.add(new Topics(13, "Words List 12", "0 of 50  words mastered"));
-        topics.add(new Topics(14, "Words List 13", "0 of 50  words mastered"));
-        topics.add(new Topics(15, "Words List 14", "0 of 50  words mastered"));
-        topics.add(new Topics(16, "Words List 15", "0 of 50  words mastered"));
+        topics.add(new Topics(2, "Level 1", "0 of 50  words mastered"));
+        topics.add(new Topics(3, "Level 2", "0 of 50  words mastered"));
+        topics.add(new Topics(4, "Level 3", "0 of 50  words mastered"));
+        topics.add(new Topics(5, "Level 4", "0 of 50  words mastered"));
+        topics.add(new Topics(6, "Level 5", "0 of 50  words mastered"));
+        topics.add(new Topics(7, "Level 6", "0 of 50  words mastered"));
+        topics.add(new Topics(8, "Level 7", "0 of 50  words mastered"));
+        topics.add(new Topics(9, "Level 8", "0 of 50  words mastered"));
+        topics.add(new Topics(10, "Level 9", "0 of 50  words mastered"));
+        topics.add(new Topics(11, "Level 10", "0 of 50  words mastered"));
+        topics.add(new Topics(12, "Level 11", "0 of 50  words mastered"));
+        topics.add(new Topics(13, "Level 12", "0 of 50  words mastered"));
+        topics.add(new Topics(14, "Level 13", "0 of 50  words mastered"));
+        topics.add(new Topics(15, "Level 14", "0 of 50  words mastered"));
+        topics.add(new Topics(16, "Level 15", "0 of 50  words mastered"));
         topicAdapter = new TopicAdapter(this, topics);
 
         topicAdapter.setOnItemClickListener(new TopicAdapter.OnItemClickListener() {
@@ -88,7 +90,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
                 getthiscard(position);
 
-                Toast.makeText(MainActivity.this, "Go to List of Words"+position, Toast.LENGTH_SHORT).show();
+//                Toast.makeText(MainActivity.this, "Go to List of Words"+position, Toast.LENGTH_SHORT).show();
 //                startActivity(new Intent(MainActivity.this, Main2Activity.class));
             }
         });
@@ -102,71 +104,71 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Intent i = new Intent(MainActivity.this, Main2Activity.class);
 
         switch (position) {
-            case 1:
-                i.putExtra("array", "Name of Week Days");
-                startActivity(i);
-                break;
-            case 2:
-                i.putExtra("array", "Names of Months");
-                startActivity(i);
-                break;
-            case 3:
+//            case 0:
+//                i.putExtra("array", "Name of Week Days");
+//                startActivity(i);
+//                break;
+//            case 1:
+//                i.putExtra("array", "Names of Months");
+//                startActivity(i);
+//                break;
+            case 0:
                 i.putExtra("array", "Words List 1");
                 startActivity(i);
                 break;
-            case 4:
+            case 1:
                 i.putExtra("array", "Words List 2");
                 startActivity(i);
                 break;
-            case 5:
+            case 2:
                 i.putExtra("array","Words List 3");
                 startActivity(i);
                 break;
-            case 6:
+            case 3:
                 i.putExtra("array","Words List 4");
                 startActivity(i);
                 break;
-            case 7:
+            case 4:
                 i.putExtra("array","Words List 5");
                 startActivity(i);
                 break;
-            case 8:
+            case 5:
                 i.putExtra("array","Words List 6");
                 startActivity(i);
                 break;
-            case 9:
+            case 6:
                 i.putExtra("array","Words List 7");
                 startActivity(i);
                 break;
-            case 10:
+            case 7:
                 i.putExtra("array","Words List 8");
                 startActivity(i);
                 break;
-            case 11:
+            case 8:
                 i.putExtra("array","Words List 9");
                 startActivity(i);
                 break;
-            case 12:
+            case 9:
                 i.putExtra("array","Words List 10");
                 startActivity(i);
                 break;
-            case 13:
+            case 10:
                 i.putExtra("array","Words List 11");
                 startActivity(i);
                 break;
-            case 14:
+            case 11:
                 i.putExtra("array","Words List 12");
                 startActivity(i);
                 break;
-            case 15:
+            case 12:
                 i.putExtra("array","Words List 13");
                 startActivity(i);
                 break;
-            case 16:
+            case 13:
                 i.putExtra("array","Words List 14");
                 startActivity(i);
                 break;
-            case 17:
+            case 14:
                 i.putExtra("array","Words List 15");
                 startActivity(i);
                 break;
@@ -220,23 +222,23 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
     }
-
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        int id = item.getItemId();
-        if (id == R.id.nav_profile) {
-            Toast.makeText(this, "Profile Clicked", Toast.LENGTH_SHORT).show();
-        }
-        if (id == R.id.nav_lang_selection) {
-            Toast.makeText(this, "Language Selection", Toast.LENGTH_SHORT).show();
-//            openDialog();
-            startActivity(new Intent(MainActivity.this, LanguageSelectionActivity.class));
-        }
-
-        drawerLayout.closeDrawer(GravityCompat.START);
-        return true;
-
-    }
+//
+//    @Override
+//    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+//        int id = item.getItemId();
+//        if (id == R.id.nav_profile) {
+//            Toast.makeText(this, "Profile Clicked", Toast.LENGTH_SHORT).show();
+//        }
+//        if (id == R.id.nav_lang_selection) {
+//            Toast.makeText(this, "Language Selection", Toast.LENGTH_SHORT).show();
+////            openDialog();
+//            startActivity(new Intent(MainActivity.this, LanguageSelectionActivity.class));
+//        }
+//
+//        drawerLayout.closeDrawer(GravityCompat.START);
+//        return true;
+//
+//    }
 
     private void showFragments(Fragment fragment) {
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
@@ -247,11 +249,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public void onBackPressed() {
-        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
-            drawerLayout.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
+        super.onBackPressed();
+//        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+//            drawerLayout.closeDrawer(GravityCompat.START);
+//        } else {
+//            super.onBackPressed();
+//        }
     }
 
 }

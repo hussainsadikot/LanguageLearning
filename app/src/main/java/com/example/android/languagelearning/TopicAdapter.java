@@ -49,21 +49,23 @@ class TopicAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view;
         final RecyclerView.ViewHolder holder;
-        switch (viewType) {
-
-            case R.layout.topic_list:
-                view = LayoutInflater.from(context).inflate(R.layout.topic_list, parent,false);
-                holder = new TopicViewHolder(view, mListener);
-                break;
-            case R.layout.create_account_card:
-                view = LayoutInflater.from(context).inflate(R.layout.create_account_card, parent, false);
-                holder = new CreateAccountViewHolder(view);
-                break;
-
-
-            default:
-                throw new IllegalStateException("Unexpected value: " + viewType);
-        }
+        view = LayoutInflater.from(context).inflate(R.layout.topic_list, parent,false);
+        holder = new TopicViewHolder(view, mListener);
+//        switch (viewType) {
+//
+//            case R.layout.topic_list:
+//                view = LayoutInflater.from(context).inflate(R.layout.topic_list, parent,false);
+//                holder = new TopicViewHolder(view, mListener);
+//                break;
+////            case R.layout.create_account_card:
+////                view = LayoutInflater.from(context).inflate(R.layout.create_account_card, parent, false);
+////                holder = new CreateAccountViewHolder(view);
+////                break;
+//
+//
+////            default:
+////                throw new IllegalStateException("Unexpected value: " + viewType);
+//        }
         return holder;
     }
 
@@ -71,40 +73,42 @@ class TopicAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
 
         if (holder instanceof TopicViewHolder) {
-            int TopicPosition =position-1;
-            Topics topics1 = topics.get(TopicPosition);
+//            int TopicPosition =position;
+            Topics topics1 = topics.get(position);
 
             ((TopicViewHolder) holder).textViewTitle.setText(topics1.getTitle());
             ((TopicViewHolder) holder).textViewProgress.setText(topics1.getProgressText());
             ((TopicViewHolder) holder).progressBar.getProgress();
-        } else if (holder instanceof CreateAccountViewHolder) {
+        }
+
+//        else if (holder instanceof CreateAccountViewHolder) {
 //            ((CreateAccountViewHolder) holder).textViewSignIn.setText(context.getResources().getString(R.string.sign_in));
 
 
-            ((CreateAccountViewHolder) holder).textViewSignIn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Toast.makeText(context, "Sign in", Toast.LENGTH_SHORT).show();
-                    context.startActivity( new Intent(context, LoginActivity.class));
-                }
-            });
-            ((CreateAccountViewHolder) holder).createAccountButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Toast.makeText(context, "Create Account", Toast.LENGTH_SHORT).show();
+//            ((CreateAccountViewHolder) holder).textViewSignIn.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    Toast.makeText(context, "Sign in", Toast.LENGTH_SHORT).show();
+//                    context.startActivity( new Intent(context, LoginActivity.class));
+//                }
+//            });
+//            ((CreateAccountViewHolder) holder).createAccountButton.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    Toast.makeText(context, "Create Account", Toast.LENGTH_SHORT).show();
+//
+//                    context.startActivity( new Intent(context, RegisterActivity.class));
+//                }
+//            });
 
-                    context.startActivity( new Intent(context, RegisterActivity.class));
-                }
-            });
 
-
-        }
+//        }
 
     }
 
     @Override
     public int getItemCount() {
-        return topics.size()+1;
+        return topics.size();
     }
 
     public static class TopicViewHolder extends RecyclerView.ViewHolder {
@@ -142,22 +146,22 @@ class TopicAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 //        }
     }
 
-    class CreateAccountViewHolder extends RecyclerView.ViewHolder {
-        public TextView textMessage, textView, textViewSignIn;
-        public Button createAccountButton;
-
-
-        public CreateAccountViewHolder(@NonNull View itemView) {
-            super(itemView);
-            textMessage = itemView.findViewById(R.id.title_create_account);
-            textView = itemView.findViewById(R.id.tv_or);
-
-            textViewSignIn = itemView.findViewById(R.id.tv_sign_in);
-            createAccountButton = itemView.findViewById(R.id.create_account_button);
-
-
-        }
-    }
+//    class CreateAccountViewHolder extends RecyclerView.ViewHolder {
+//        public TextView textMessage, textView, textViewSignIn;
+//        public Button createAccountButton;
+//
+//
+//        public CreateAccountViewHolder(@NonNull View itemView) {
+//            super(itemView);
+//            textMessage = itemView.findViewById(R.id.title_create_account);
+//            textView = itemView.findViewById(R.id.tv_or);
+//
+//            textViewSignIn = itemView.findViewById(R.id.tv_sign_in);
+//            createAccountButton = itemView.findViewById(R.id.create_account_button);
+//
+//
+//        }
+//    }
 
 
 }

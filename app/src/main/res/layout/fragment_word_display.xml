@@ -211,12 +211,12 @@
                     android:layout_marginBottom="16dp"
                     android:background="@android:color/darker_gray"
                     android:indeterminate="false"
-                    android:max="50"
+
                     android:maxWidth="10dp"
-                    android:min="1"
+
                     android:minWidth="0dp"
                     android:outlineProvider="none"
-                    android:progressDrawable="@drawable/green_progress"
+                    android:progressDrawable="@drawable/yellow_progress"
 
                     />
 
@@ -249,7 +249,7 @@
 
                     android:minWidth="0dp"
                     android:outlineProvider="none"
-                    android:progressDrawable="@drawable/green_progress"
+                    android:progressDrawable="@drawable/red_progress"
 
                     />
                 <TextView
@@ -263,7 +263,9 @@
                     android:textColor="@android:color/black"
                     android:textSize="22sp"
                     android:textStyle="bold"
-                    android:layout_centerHorizontal="true"/>
+                    android:layout_centerHorizontal="true"
+                    android:visibility="gone"
+                    />
 
 
             </RelativeLayout>

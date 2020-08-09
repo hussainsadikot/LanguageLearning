@@ -72,19 +72,19 @@ public class WordsList13 extends Fragment {
         tvProgressMaster = view.findViewById(R.id.tv_progress_master);
         tvProgressMaster.setText("You have Mastered 0 out of "+words.length);
         progressBarMaster.setProgress(0);
-        progressBarMaster.setMax(12);
+        progressBarMaster.setMax(words1.length);
 
         // Learning Progress Initial Settings
         progressBarLearning = view.findViewById(R.id.progressbar_learning);
         progressBarLearning.setProgress(0);
-        progressBarLearning.setMax(12);
+        progressBarLearning.setMax(words1.length);
 
         tvProgressLearning = view.findViewById(R.id.learning_progress_tv);
         tvProgressLearning.setText("You are learning 0 out of "+words.length);
 
         // Review Progress Initial Settings
         progressBarReview = view.findViewById(R.id.progressbar_review);
-        progressBarReview.setMax(12);
+        progressBarReview.setMax(words.length);
         tvProgressReview = view.findViewById(R.id.review_progress_tv);
         tvProgressReview.setText("You are reviewing 0 out of "+words.length);
 
@@ -125,7 +125,7 @@ public class WordsList13 extends Fragment {
 //                Toast.makeText(MainActivity.this, "You don't know this word, cool", Toast.LENGTH_SHORT).show();
 //                revealNextWord();
                 updateNextWordfromGlobal();
-
+                flipReverse();
             }
         });
 
