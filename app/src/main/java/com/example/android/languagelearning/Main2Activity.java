@@ -178,7 +178,7 @@ public class Main2Activity extends AppCompatActivity
                                      Integer progress_master,
                                      Integer progress_reviewing,
                                      Integer progress_learning){
-        SharedPreferences sharedPreferences= this.getSharedPreferences("SHARED_PREFS_1", MODE_PRIVATE);
+        SharedPreferences sharedPreferences= getSharedPreferences("SHARED_PREFS_1", MODE_PRIVATE);
         SharedPreferences.Editor editor1=  sharedPreferences.edit();
         editor1.putString(TEXT_MASTER_1,text_master_tv);
         editor1.putString(TEXT_REVIEWING_1,text_reviewing_tv);
@@ -197,7 +197,7 @@ public class Main2Activity extends AppCompatActivity
 
     }
     private void loadData() {
-        SharedPreferences sharedPreferences= this.getSharedPreferences(SHARED_PREFS_1, Context.MODE_PRIVATE);
+//        SharedPreferences sharedPreferences= getSharedPreferences(SHARED_PREFS_1, Context.MODE_PRIVATE);
 //
 //        text_master_1=sharedPreferences.getString(TEXT_MASTER_1,tvProgressMaster.getText().toString());
 //        progress_master_1=sharedPreferences.getInt(PROGRESS_MASTER_1,progressBarMaster.getProgress());

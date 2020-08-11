@@ -162,8 +162,12 @@ public class WordsList1 extends Fragment {
 
 
 //                Toast.makeText(MainActivity.this, "You know this word Fantastic", Toast.LENGTH_SHORT).show();
-               String cur_tv_progress_master,cur_tv_progress_reviewing,cur_tv_progress_learning;
-               Integer cur_progress_master,cur_progress_reviewing,cur_progress_learning;
+                String cur_tv_progress_master="";
+                String cur_tv_progress_reviewing="";
+                String cur_tv_progress_learning="";
+                Integer cur_progress_master=0;
+                Integer cur_progress_reviewing=0;
+                Integer cur_progress_learning=0;
                cur_tv_progress_master = tvProgressMaster.getText().toString();
                cur_tv_progress_reviewing = tvProgressReview.getText().toString();
                 cur_tv_progress_learning = tvProgressLearning.getText().toString();
@@ -171,7 +175,7 @@ public class WordsList1 extends Fragment {
                 cur_progress_reviewing =progressBarReview.getProgress();
                 cur_progress_learning =progressBarLearning.getProgress();
 
-                main2Activity.getDataFromFragment1(iknowword,cur_def,cur_tv_progress_master,cur_tv_progress_reviewing,cur_tv_progress_learning,cur_progress_master,cur_progress_reviewing,cur_progress_learning);
+//                main2Activity.getDataFromFragment1(iknowword,cur_def,cur_tv_progress_master,cur_tv_progress_reviewing,cur_tv_progress_learning,cur_progress_master,cur_progress_reviewing,cur_progress_learning);
                 updateNextWordfromGlobal();
 
                 flipReverse();
@@ -186,8 +190,12 @@ public class WordsList1 extends Fragment {
                 ChangeTagForIDont(idontknowword);
 //                Toast.makeText(MainActivity.this, "You don't know this word, cool", Toast.LENGTH_SHORT).show();
 //                revealNextWord();
-                String cur_tv_progress_master,cur_tv_progress_reviewing,cur_tv_progress_learning;
-                Integer cur_progress_master,cur_progress_reviewing,cur_progress_learning;
+                String cur_tv_progress_master="";
+                String cur_tv_progress_reviewing="";
+                String cur_tv_progress_learning="";
+                Integer cur_progress_master=0;
+                Integer cur_progress_reviewing=0;
+                Integer cur_progress_learning=0;
                 cur_tv_progress_master = tvProgressMaster.getText().toString();
                 cur_tv_progress_reviewing = tvProgressReview.getText().toString();
                 cur_tv_progress_learning = tvProgressLearning.getText().toString();
@@ -195,7 +203,7 @@ public class WordsList1 extends Fragment {
                 cur_progress_reviewing =progressBarReview.getProgress();
                 cur_progress_learning =progressBarLearning.getProgress();
 
-                main2Activity.getDataFromFragment1(idontknowword,cur_def,cur_tv_progress_master,cur_tv_progress_reviewing,cur_tv_progress_learning,cur_progress_master,cur_progress_reviewing,cur_progress_learning);
+//                main2Activity.getDataFromFragment1(idontknowword,cur_def,cur_tv_progress_master,cur_tv_progress_reviewing,cur_tv_progress_learning,cur_progress_master,cur_progress_reviewing,cur_progress_learning);
 
                 updateNextWordfromGlobal();
                 flipReverse();
