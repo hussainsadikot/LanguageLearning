@@ -17,6 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
@@ -75,11 +76,12 @@ public class WordsList1 extends Fragment {
    private   String text_master_1="";
     public Integer progress_master_1=0;
     public  String text_learning_1="";
-    public  String progress_learning_1="0";
+    public  Integer progress_learning_1=0;
     public String text_reviewing_1="";
-    public  String progress_reviewing_1="0";
+    public  Integer progress_reviewing_1=0;
     public  String text_word_1="";
     public  String text_def_1="";
+
 
     private Map<String, String> map = new HashMap<>();
 
@@ -88,12 +90,14 @@ public class WordsList1 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         // Inflate the layout for this fragment
        String[] words1= getActivity().getResources().getStringArray(R.array.Level_I_Earth_Sky_and_Water__Array_List_1);
        String[] words_definition1= getActivity().getResources().getStringArray(R.array.Definition_Array_List_1);
         words = Arrays.copyOf(words1, words1.length);
         words_definition = Arrays.copyOf(words_definition1, words_definition1.length);
         View view = inflater.inflate(R.layout.fragment_word_display, container, false);
+
         tv_tag = view.findViewById(R.id.tv_word_tag);
         for (int i = 0; i <= words.length - 1; i++) {
             map.put(words[i], mTag);
@@ -135,15 +139,14 @@ public class WordsList1 extends Fragment {
         reveal = view.findViewById(R.id.reveal_button_front);
         idont = view.findViewById(R.id.i__dont_know_button);
         iknow = view.findViewById(R.id.i_know_button);
+        //Creating Instance of Man2Activity
+        Main2Activity main2Activity = new Main2Activity();
 
-        //Load data and update views values according to saved load data
-//        saveData();
-//        loadData();
-        updateViewsBySharedPref();
 
         reveal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 flip();
             }
         });
@@ -152,32 +155,61 @@ public class WordsList1 extends Fragment {
             @Override
             public void onClick(View view) {
                 String iknowword = textView_title_back.getText().toString();
+                String cur_def =textView_definition.getText().toString();
 //                findIndex(globalListOfWordAndDefinition.globalWord,iknowword);
                 ChangeTag(iknowword);
 //                revealNextWord();
 
+
 //                Toast.makeText(MainActivity.this, "You know this word Fantastic", Toast.LENGTH_SHORT).show();
-                saveData();
+               String cur_tv_progress_master,cur_tv_progress_reviewing,cur_tv_progress_learning;
+               Integer cur_progress_master,cur_progress_reviewing,cur_progress_learning;
+               cur_tv_progress_master = tvProgressMaster.getText().toString();
+               cur_tv_progress_reviewing = tvProgressReview.getText().toString();
+                cur_tv_progress_learning = tvProgressLearning.getText().toString();
+                cur_progress_master =progressBarMaster.getProgress();
+                cur_progress_reviewing =progressBarReview.getProgress();
+                cur_progress_learning =progressBarLearning.getProgress();
+
+                main2Activity.getDataFromFragment1(iknowword,cur_def,cur_tv_progress_master,cur_tv_progress_reviewing,cur_tv_progress_learning,cur_progress_master,cur_progress_reviewing,cur_progress_learning);
                 updateNextWordfromGlobal();
 
                 flipReverse();
+                saveData();
             }
         });
         idont.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String idontknowword = textView_title_back.getText().toString();
+                String cur_def =textView_definition.getText().toString();
                 ChangeTagForIDont(idontknowword);
 //                Toast.makeText(MainActivity.this, "You don't know this word, cool", Toast.LENGTH_SHORT).show();
 //                revealNextWord();
-                saveData();
+                String cur_tv_progress_master,cur_tv_progress_reviewing,cur_tv_progress_learning;
+                Integer cur_progress_master,cur_progress_reviewing,cur_progress_learning;
+                cur_tv_progress_master = tvProgressMaster.getText().toString();
+                cur_tv_progress_reviewing = tvProgressReview.getText().toString();
+                cur_tv_progress_learning = tvProgressLearning.getText().toString();
+                cur_progress_master =progressBarMaster.getProgress();
+                cur_progress_reviewing =progressBarReview.getProgress();
+                cur_progress_learning =progressBarLearning.getProgress();
+
+                main2Activity.getDataFromFragment1(idontknowword,cur_def,cur_tv_progress_master,cur_tv_progress_reviewing,cur_tv_progress_learning,cur_progress_master,cur_progress_reviewing,cur_progress_learning);
+
                 updateNextWordfromGlobal();
                 flipReverse();
+                saveData();
             }
         });
 
 //        ((Main2Activity) Objects.requireNonNull(getActivity())).updateNextWordfromGlobal();
         updateNextWordfromGlobal();
+
+        //Load data and update views values according to saved load data
+//        saveData();
+//        loadData();
+//        updateViewsBySharedPref();
         return view;
     }
 
@@ -190,26 +222,35 @@ public class WordsList1 extends Fragment {
         editor.putString(TEXT_WORD1_1,textView_title_back.getText().toString());
         editor.putString(TEXT_DEFINITION_1,textView_definition.getText().toString());
         editor.putInt(PROGRESS_MASTER_1,progressBarMaster.getProgress());
-//        editor.putString(PROGRESS_LEARNING_1,Integer.toString(progressBarLearning.getProgress()));
-//        editor.putString(PROGRESS_REVIEWING_1,Integer.toString(progressBarReview.getProgress()));
+        editor.putInt(PROGRESS_LEARNING_1,progressBarLearning.getProgress());
+        editor.putInt(PROGRESS_REVIEWING_1,progressBarReview.getProgress());
         editor.apply();
-        loadData();
+        Toast.makeText(getActivity(), "Data Saved", Toast.LENGTH_SHORT).show();
+//        loadData();
     }
     private void loadData() {
-        SharedPreferences sharedPreferences= Objects.requireNonNull(getContext()).getSharedPreferences(SHARED_PREFS_1, Context.MODE_PRIVATE);
+        SharedPreferences sharedPreferences= Objects.requireNonNull(getActivity()).getSharedPreferences(SHARED_PREFS_1, Context.MODE_PRIVATE);
 
-         text_master_1=sharedPreferences.getString(TEXT_MASTER_1,"");
+         text_master_1=sharedPreferences.getString(TEXT_MASTER_1,tvProgressMaster.getText().toString());
         progress_master_1=sharedPreferences.getInt(PROGRESS_MASTER_1,progressBarMaster.getProgress());
-        text_learning_1=sharedPreferences.getString(TEXT_LEARNING_1,"");
-//      progress_learning_1=sharedPreferences.getString(PROGRESS_LEARNING_1,"");
-        text_reviewing_1=sharedPreferences.getString(TEXT_REVIEWING_1,"");
-//        progress_reviewing_1=sharedPreferences.getString(PROGRESS_REVIEWING_1,"");
-       text_word_1=sharedPreferences.getString(TEXT_WORD1_1,"");
-        text_def_1=sharedPreferences.getString(TEXT_DEFINITION_1,"");
-
+        text_learning_1=sharedPreferences.getString(TEXT_LEARNING_1,tvProgressLearning.getText().toString());
+      progress_learning_1=sharedPreferences.getInt(PROGRESS_LEARNING_1,progressBarLearning.getProgress());
+        text_reviewing_1=sharedPreferences.getString(TEXT_REVIEWING_1,tvProgressReview.getText().toString());
+        progress_reviewing_1=sharedPreferences.getInt(PROGRESS_REVIEWING_1,progressBarReview.getProgress());
+       text_word_1=sharedPreferences.getString(TEXT_WORD1_1,textView_title_back.getText().toString());
+        text_def_1=sharedPreferences.getString(TEXT_DEFINITION_1,textView_definition.getText().toString());
+        Toast.makeText(getActivity(), "data loaded", Toast.LENGTH_SHORT).show();
 
 
     }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        loadData();
+        updateViewsBySharedPref();
+    }
+
     public void updateViewsBySharedPref(){
 
         tvProgressMaster.setText(text_master_1);
@@ -219,8 +260,9 @@ public class WordsList1 extends Fragment {
         textView_title_back.setText(text_word_1);
         textView_definition.setText(text_def_1);
         progressBarMaster.setProgress((progress_master_1));
-//        progressBarReview.setProgress(Integer.parseInt(progress_reviewing_1) );
-//        progressBarLearning.setProgress(Integer.parseInt(progress_learning_1));
+        progressBarReview.setProgress((progress_reviewing_1) );
+        progressBarLearning.setProgress((progress_learning_1));
+        Toast.makeText(getActivity(), "data updated", Toast.LENGTH_SHORT).show();
     }
 //
 //    private void revealNextWord() {

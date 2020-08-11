@@ -11,8 +11,10 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Button;
@@ -25,20 +27,47 @@ import com.google.android.material.navigation.NavigationView;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class Main2Activity extends AppCompatActivity
-//        implements NavigationView.OnNavigationItemSelectedListener
 {
+//        implements NavigationView.OnNavigationItemSelectedListener{
+
+
+
+
+
 
     Toolbar toolbar;
-    DrawerLayout drawerLayout;
-    NavigationView navigationView;
+//    DrawerLayout drawerLayout;
+//    NavigationView navigationView;
 
 
 
     public String x=null;
     public FragmentManager fm = getSupportFragmentManager();
     public FragmentTransaction ft = fm.beginTransaction();
+
+
+
+    public static final String SHARED_PREFS_1 = "sharedPrefs_1";
+    public static final String TEXT_MASTER_1 = "text_master_1";
+    public static final String PROGRESS_MASTER_1 = "progress_master_1";
+    public static final String TEXT_LEARNING_1 = "text_learning_1";
+    public static final String PROGRESS_LEARNING_1 = "progress_learning_1";
+    public static final String TEXT_REVIEWING_1 = "text_reviewing_1";
+    public static final String PROGRESS_REVIEWING_1 = "progress_reviewing_1";
+    public static final String TEXT_WORD1_1 = "text_wod_1";
+    public static final String TEXT_DEFINITION_1 = "text_def_1";
+    // shared variable default loading
+    private   String text_master_1="";
+    public Integer progress_master_1=0;
+    public  String text_learning_1="";
+    public  Integer progress_learning_1=0;
+    public String text_reviewing_1="";
+    public  Integer progress_reviewing_1=0;
+    public  String text_word_1="";
+    public  String text_def_1="";
 
 
 
@@ -58,6 +87,7 @@ public class Main2Activity extends AppCompatActivity
             switch (x) {
                 case ("Name of Week Days"):
                     Fragment weekDaysFragment = new WeekDaysFragment();
+
                     ft.replace(R.id.fragment_container,weekDaysFragment).commit();
                     break;
                 case ("Names of Months"):
@@ -140,6 +170,63 @@ public class Main2Activity extends AppCompatActivity
 //        toggle.syncState();
 
     }
+    //Getting Data from Fragment
+    public void getDataFromFragment1( String text_word, String text_def,
+                                     String text_master_tv,
+                                     String text_reviewing_tv,
+                                     String text_learning_tv,
+                                     Integer progress_master,
+                                     Integer progress_reviewing,
+                                     Integer progress_learning){
+        SharedPreferences sharedPreferences= this.getSharedPreferences("SHARED_PREFS_1", MODE_PRIVATE);
+        SharedPreferences.Editor editor1=  sharedPreferences.edit();
+        editor1.putString(TEXT_MASTER_1,text_master_tv);
+        editor1.putString(TEXT_REVIEWING_1,text_reviewing_tv);
+        editor1.putString(TEXT_LEARNING_1,text_learning_tv);
+        editor1.putString(TEXT_WORD1_1,text_word);
+        editor1.putString(TEXT_DEFINITION_1,text_def);
+        editor1.putInt(PROGRESS_MASTER_1,progress_master);
+        editor1.putInt(PROGRESS_LEARNING_1,progress_learning);
+        editor1.putInt(PROGRESS_REVIEWING_1,progress_reviewing);
+        editor1.apply();
+
+        Bundle b1 = new Bundle();
+
+
+
+
+    }
+    private void loadData() {
+        SharedPreferences sharedPreferences= this.getSharedPreferences(SHARED_PREFS_1, Context.MODE_PRIVATE);
+//
+//        text_master_1=sharedPreferences.getString(TEXT_MASTER_1,tvProgressMaster.getText().toString());
+//        progress_master_1=sharedPreferences.getInt(PROGRESS_MASTER_1,progressBarMaster.getProgress());
+//        text_learning_1=sharedPreferences.getString(TEXT_LEARNING_1,tvProgressLearning.getText().toString());
+//        progress_learning_1=sharedPreferences.getInt(PROGRESS_LEARNING_1,progressBarLearning.getProgress());
+//        text_reviewing_1=sharedPreferences.getString(TEXT_REVIEWING_1,tvProgressReview.getText().toString());
+//        progress_reviewing_1=sharedPreferences.getInt(PROGRESS_REVIEWING_1,progressBarReview.getProgress());
+//        text_word_1=sharedPreferences.getString(TEXT_WORD1_1,textView_title_back.getText().toString());
+//        text_def_1=sharedPreferences.getString(TEXT_DEFINITION_1,textView_definition.getText().toString());
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //    @Override
 //    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
