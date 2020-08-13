@@ -3,6 +3,8 @@ package com.example.android.languagelearning;
 import android.animation.Animator;
 import android.animation.AnimatorInflater;
 import android.animation.AnimatorSet;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -14,6 +16,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
@@ -21,6 +24,7 @@ import androidx.fragment.app.Fragment;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 
 public class WordsList10 extends Fragment {
@@ -44,6 +48,28 @@ public class WordsList10 extends Fragment {
     private String mTag= "Global";
     CardView cardBack,cardFront;
     private boolean flipped;
+    public static final String SHARED_PREFS_10 = "sharedPrefs_10";
+    public static final String TEXT_MASTER_10 = "text_master_10";
+    public static final String PROGRESS_MASTER_10 = "progress_master_10";
+    public static final String TEXT_LEARNING_10 = "text_learning_10";
+    public static final String PROGRESS_LEARNING_10 = "progress_learning_10";
+    public static final String TEXT_REVIEWING_10 = "text_reviewing_10";
+    public static final String PROGRESS_REVIEWING_10 = "progress_reviewing_10";
+    public static final String TEXT_WORD1_10 = "text_word_10";
+    public static final String TEXT_DEFINITION_10 = "text_def_10";
+    public static final String WORD_LIST_SIZE_10 = "word_list_size_10";
+    public static final String WORD_INDEX_10 = "word_index_10";
+    // shared variable default loading
+    private   String text_master_10="";
+    public Integer progress_master_10=0;
+    public  String text_learning_10="";
+    public  Integer progress_learning_10=0;
+    public String text_reviewing_10="";
+    public  Integer progress_reviewing_10=0;
+    public  String text_word_10="";
+    public  String text_def_10="";
+    public int word_list_size_10 =0;
+    public int word_index_10;
 
 
     @Override
@@ -114,6 +140,7 @@ public class WordsList10 extends Fragment {
 //                Toast.makeText(MainActivity.this, "You know this word Fantastic", Toast.LENGTH_SHORT).show();
                 updateNextWordfromGlobal();
                 flipReverse();
+                saveData();
             }
         });
         idont.setOnClickListener(new View.OnClickListener() {
@@ -124,6 +151,7 @@ public class WordsList10 extends Fragment {
 //                Toast.makeText(MainActivity.this, "You don't know this word, cool", Toast.LENGTH_SHORT).show();
 //                revealNextWord();
                 updateNextWordfromGlobal();
+                saveData();
             }
         });
 
@@ -135,7 +163,131 @@ public class WordsList10 extends Fragment {
 
 
     }
-//    private void revealNextWord() {
+    private void updateNextWordfromGlobal() {
+//        if(mGlobalWordNumber==word_index_1){
+//            textView_title_front.setText(words[mGlobalWordNumber]);
+//            textView_title_back.setText(words[mGlobalWordNumber]);
+//            textView_definition.setText(words_definition[mGlobalWordNumber]);
+//            mGlobalWordNumber++;
+//            return;
+//        }
+//        if(mGlobalWordNumber!=word_index_1){
+//            mGlobalWordNumber=word_index_1;
+//            mGlobalWordNumber=mGlobalWordNumber+1;
+//            if(mGlobalWordNumber == words.length){
+//                mGlobalWordNumber = 0;
+//                word_index_1=0;
+//            textView_title_front.setText(words[mGlobalWordNumber]);
+//            textView_title_back.setText(words[mGlobalWordNumber]);
+//            textView_definition.setText(words_definition[mGlobalWordNumber]);
+//            word_index_1 =mGlobalWordNumber;
+//            mGlobalWordNumber=mGlobalWordNumber+1;
+//            word_index_1=word_index_1+1 ;}
+//        }
+//        else
+        if (mGlobalWordNumber == words.length) {
+            mGlobalWordNumber = 0;
+            textView_title_front.setText(words[mGlobalWordNumber]);
+            textView_title_back.setText(words[mGlobalWordNumber]);
+            textView_definition.setText(words_definition[mGlobalWordNumber]);
+            mGlobalWordNumber=mGlobalWordNumber+1;
+//            word_index_1=word_index_1+1 ;
+        } else {
+//            Random rand = new Random(); //instance of random class
+//            int upperbound = words.length;
+//            //generate random values from 0-12
+//            int int_random = rand.nextInt(upperbound);
+
+
+            textView_title_front.setText(words[mGlobalWordNumber]);
+            textView_title_back.setText(words[mGlobalWordNumber]);
+            textView_definition.setText(words_definition[mGlobalWordNumber]);
+            mGlobalWordNumber=mGlobalWordNumber+1;
+//            word_index_1=word_index_1+1 ;
+        }
+
+
+
+
+
+    }
+    private void saveData() {
+        SharedPreferences sharedPreferences= Objects.requireNonNull(this.getActivity()).getSharedPreferences(SHARED_PREFS_10, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor=  sharedPreferences.edit();
+        editor.putString(TEXT_MASTER_10,tvProgressMaster.getText().toString());
+        editor.putString(TEXT_REVIEWING_10,tvProgressReview.getText().toString());
+        editor.putString(TEXT_LEARNING_10,tvProgressLearning.getText().toString());
+        String text_word_to_store= textView_title_back.getText().toString();
+        String text_word_def_to_store= textView_definition.getText().toString();
+        editor.putString(TEXT_WORD1_10, text_word_to_store);
+        editor.putString(TEXT_DEFINITION_10,text_word_def_to_store);
+        editor.putInt(PROGRESS_MASTER_10,progressBarMaster.getProgress());
+        editor.putInt(PROGRESS_LEARNING_10,progressBarLearning.getProgress());
+        editor.putInt(PROGRESS_REVIEWING_10,progressBarReview.getProgress());
+        editor.putInt(WORD_LIST_SIZE_10,words.length);
+        editor.putInt(WORD_INDEX_10,mGlobalWordNumber);
+
+        editor.apply();
+//        Toast.makeText(getActivity(), "Data Saved", Toast.LENGTH_SHORT).show();
+//        loadData();
+    }
+    private void loadData() {
+        SharedPreferences sharedPreferences= Objects.requireNonNull(getActivity()).getSharedPreferences(SHARED_PREFS_10, Context.MODE_PRIVATE);
+        word_index_10=sharedPreferences.getInt(WORD_INDEX_10,mGlobalWordNumber);
+        text_master_10=sharedPreferences.getString(TEXT_MASTER_10,tvProgressMaster.getText().toString());
+        progress_master_10=sharedPreferences.getInt(PROGRESS_MASTER_10,progressBarMaster.getProgress());
+        text_learning_10=sharedPreferences.getString(TEXT_LEARNING_10,tvProgressLearning.getText().toString());
+        progress_learning_10=sharedPreferences.getInt(PROGRESS_LEARNING_10,progressBarLearning.getProgress());
+        text_reviewing_10=sharedPreferences.getString(TEXT_REVIEWING_10,tvProgressReview.getText().toString());
+        progress_reviewing_10=sharedPreferences.getInt(PROGRESS_REVIEWING_10,progressBarReview.getProgress());
+
+        text_word_10=sharedPreferences.getString(TEXT_WORD1_10,words[0]);
+
+
+
+
+        text_def_10=sharedPreferences.getString(TEXT_DEFINITION_10,words_definition[0]);
+        word_list_size_10= sharedPreferences.getInt(WORD_LIST_SIZE_10,words.length);
+
+//        Toast.makeText(getActivity(), "data loaded", Toast.LENGTH_SHORT).show();
+
+
+    }
+    public void updateViewsBySharedPref(){
+//        int updateIndex = 0;
+//        for (int i =0; i<words.length; i++){
+//            if(text_word_1.equals(words[i])){
+//                updateIndex = i;
+////                return;
+//            }
+//        }
+        tvProgressMaster.setText(text_master_10);
+        mGlobalWordNumber=word_index_10;
+        tvProgressReview.setText(text_reviewing_10);
+        tvProgressLearning.setText(text_learning_10);
+        for(int i =0 ; i<words.length; i++){
+            if(words[i].equals(text_word_10)){
+                word_index_10=i;
+            }
+        }
+        textView_title_front.setText(text_word_10);
+        textView_title_back.setText(text_word_10);
+
+        textView_definition.setText(text_def_10);
+        progressBarMaster.setProgress((progress_master_10));
+        progressBarReview.setProgress((progress_reviewing_10) );
+        progressBarLearning.setProgress((progress_learning_10));
+//        Toast.makeText(getActivity(), "data updated", Toast.LENGTH_SHORT).show();
+    }
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        loadData();
+        updateViewsBySharedPref();
+    }
+
+
+    //    private void revealNextWord() {
 //        textView_definition.setVisibility(View.GONE);
 //        idont.setVisibility(View.GONE);
 //        iknow.setVisibility(View.GONE);
@@ -207,29 +359,7 @@ private void flipReverse() {
     }
 
 
-    private void updateNextWordfromGlobal() {
-
-
-        if (mGlobalWordNumber == words.length) {
-            mGlobalWordNumber = 0;
-            textView_title_front.setText(words[mGlobalWordNumber]);
-            textView_title_back.setText(words[mGlobalWordNumber]);
-            textView_definition.setText(words_definition[mGlobalWordNumber]);
-
-        } else {
-//            Random rand = new Random(); //instance of random class
-//            int upperbound = words.length;
-//            //generate random values from 0-12
-//            int int_random = rand.nextInt(upperbound);
-            textView_title_front.setText(words[mGlobalWordNumber]);
-            textView_title_back.setText(words[mGlobalWordNumber]);
-            textView_definition.setText(words_definition[mGlobalWordNumber]);
-        }
-
-
-        ++mGlobalWordNumber;
-
-    }
+    
 
 
     private void ChangeTagForIDont(String idontknowword) {

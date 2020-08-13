@@ -175,20 +175,27 @@ public class WordsList2 extends Fragment {
 //            mGlobalWordNumber++;
 //            return;
 //        }
-        if(mGlobalWordNumber!=word_index_2){
-            mGlobalWordNumber=word_index_2;
-            ++mGlobalWordNumber;
-            textView_title_front.setText(words[mGlobalWordNumber]);
-            textView_title_back.setText(words[mGlobalWordNumber]);
-            textView_definition.setText(words_definition[mGlobalWordNumber]);
-            word_index_2 =mGlobalWordNumber;
-        }
-        else if (mGlobalWordNumber == words.length) {
+//        if(mGlobalWordNumber!=word_index_1){
+//            mGlobalWordNumber=word_index_1;
+//            mGlobalWordNumber=mGlobalWordNumber+1;
+//            if(mGlobalWordNumber == words.length){
+//                mGlobalWordNumber = 0;
+//                word_index_1=0;
+//            textView_title_front.setText(words[mGlobalWordNumber]);
+//            textView_title_back.setText(words[mGlobalWordNumber]);
+//            textView_definition.setText(words_definition[mGlobalWordNumber]);
+//            word_index_1 =mGlobalWordNumber;
+//            mGlobalWordNumber=mGlobalWordNumber+1;
+//            word_index_1=word_index_1+1 ;}
+//        }
+//        else
+        if (mGlobalWordNumber == words.length) {
             mGlobalWordNumber = 0;
             textView_title_front.setText(words[mGlobalWordNumber]);
             textView_title_back.setText(words[mGlobalWordNumber]);
             textView_definition.setText(words_definition[mGlobalWordNumber]);
-
+            mGlobalWordNumber=mGlobalWordNumber+1;
+//            word_index_1=word_index_1+1 ;
         } else {
 //            Random rand = new Random(); //instance of random class
 //            int upperbound = words.length;
@@ -199,11 +206,13 @@ public class WordsList2 extends Fragment {
             textView_title_front.setText(words[mGlobalWordNumber]);
             textView_title_back.setText(words[mGlobalWordNumber]);
             textView_definition.setText(words_definition[mGlobalWordNumber]);
+            mGlobalWordNumber=mGlobalWordNumber+1;
+//            word_index_1=word_index_1+1 ;
         }
 
 
-        mGlobalWordNumber++;
-        word_index_2++ ;
+
+
 
     }
     private void saveData() {
@@ -212,13 +221,6 @@ public class WordsList2 extends Fragment {
         editor.putString(TEXT_MASTER_2,tvProgressMaster.getText().toString());
         editor.putString(TEXT_REVIEWING_2,tvProgressReview.getText().toString());
         editor.putString(TEXT_LEARNING_2,tvProgressLearning.getText().toString());
-        for (int i=0;i<words.length;i++){
-            String word_string_for_index = textView_title_back.getText().toString();
-            if (words[i].equals(word_string_for_index)){
-                editor.putInt(WORD_INDEX_2,i);
-            }
-        }
-
         String text_word_to_store= textView_title_back.getText().toString();
         String text_word_def_to_store= textView_definition.getText().toString();
         editor.putString(TEXT_WORD1_2, text_word_to_store);
@@ -227,6 +229,7 @@ public class WordsList2 extends Fragment {
         editor.putInt(PROGRESS_LEARNING_2,progressBarLearning.getProgress());
         editor.putInt(PROGRESS_REVIEWING_2,progressBarReview.getProgress());
         editor.putInt(WORD_LIST_SIZE_2,words.length);
+        editor.putInt(WORD_INDEX_2,mGlobalWordNumber);
 
         editor.apply();
 //        Toast.makeText(getActivity(), "Data Saved", Toast.LENGTH_SHORT).show();
@@ -234,7 +237,7 @@ public class WordsList2 extends Fragment {
     }
     private void loadData() {
         SharedPreferences sharedPreferences= Objects.requireNonNull(getActivity()).getSharedPreferences(SHARED_PREFS_2, Context.MODE_PRIVATE);
-        word_index_2=sharedPreferences.getInt(WORD_INDEX_2,0);
+        word_index_2=sharedPreferences.getInt(WORD_INDEX_2,mGlobalWordNumber);
         text_master_2=sharedPreferences.getString(TEXT_MASTER_2,tvProgressMaster.getText().toString());
         progress_master_2=sharedPreferences.getInt(PROGRESS_MASTER_2,progressBarMaster.getProgress());
         text_learning_2=sharedPreferences.getString(TEXT_LEARNING_2,tvProgressLearning.getText().toString());
@@ -242,26 +245,18 @@ public class WordsList2 extends Fragment {
         text_reviewing_2=sharedPreferences.getString(TEXT_REVIEWING_2,tvProgressReview.getText().toString());
         progress_reviewing_2=sharedPreferences.getInt(PROGRESS_REVIEWING_2,progressBarReview.getProgress());
 
-        text_word_2=sharedPreferences.getString(TEXT_WORD1_2,words[mGlobalWordNumber]);
+        text_word_2=sharedPreferences.getString(TEXT_WORD1_2,words[0]);
 
 
 
 
-        text_def_2=sharedPreferences.getString(TEXT_DEFINITION_2,words_definition[mGlobalWordNumber]);
+        text_def_2=sharedPreferences.getString(TEXT_DEFINITION_2,words_definition[0]);
         word_list_size_2= sharedPreferences.getInt(WORD_LIST_SIZE_2,words.length);
 
 //        Toast.makeText(getActivity(), "data loaded", Toast.LENGTH_SHORT).show();
 
 
     }
-
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        loadData();
-        updateViewsBySharedPref();
-    }
-
     public void updateViewsBySharedPref(){
 //        int updateIndex = 0;
 //        for (int i =0; i<words.length; i++){
@@ -271,9 +266,14 @@ public class WordsList2 extends Fragment {
 //            }
 //        }
         tvProgressMaster.setText(text_master_2);
-//        mGlobalWordNumber=word_index_1;
+        mGlobalWordNumber=word_index_2;
         tvProgressReview.setText(text_reviewing_2);
         tvProgressLearning.setText(text_learning_2);
+        for(int i =0 ; i<words.length; i++){
+            if(words[i].equals(text_word_2)){
+                word_index_2=i;
+            }
+        }
         textView_title_front.setText(text_word_2);
         textView_title_back.setText(text_word_2);
 
@@ -283,6 +283,16 @@ public class WordsList2 extends Fragment {
         progressBarLearning.setProgress((progress_learning_2));
 //        Toast.makeText(getActivity(), "data updated", Toast.LENGTH_SHORT).show();
     }
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        loadData();
+        updateViewsBySharedPref();
+    }
+
+
+
+
 
 
 

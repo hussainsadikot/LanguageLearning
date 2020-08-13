@@ -29,6 +29,48 @@ import java.util.List;
 import static com.example.android.languagelearning.WordsList1.PROGRESS_MASTER_1;
 import static com.example.android.languagelearning.WordsList1.SHARED_PREFS_1;
 import static com.example.android.languagelearning.WordsList1.WORD_LIST_SIZE_1;
+import static com.example.android.languagelearning.WordsList10.PROGRESS_MASTER_10;
+import static com.example.android.languagelearning.WordsList10.SHARED_PREFS_10;
+import static com.example.android.languagelearning.WordsList10.WORD_LIST_SIZE_10;
+import static com.example.android.languagelearning.WordsList11.PROGRESS_MASTER_11;
+import static com.example.android.languagelearning.WordsList11.SHARED_PREFS_11;
+import static com.example.android.languagelearning.WordsList11.WORD_LIST_SIZE_11;
+import static com.example.android.languagelearning.WordsList12.PROGRESS_MASTER_12;
+import static com.example.android.languagelearning.WordsList12.SHARED_PREFS_12;
+import static com.example.android.languagelearning.WordsList12.WORD_LIST_SIZE_12;
+import static com.example.android.languagelearning.WordsList13.PROGRESS_MASTER_13;
+import static com.example.android.languagelearning.WordsList13.SHARED_PREFS_13;
+import static com.example.android.languagelearning.WordsList13.WORD_LIST_SIZE_13;
+import static com.example.android.languagelearning.WordsList14.PROGRESS_MASTER_14;
+import static com.example.android.languagelearning.WordsList14.SHARED_PREFS_14;
+import static com.example.android.languagelearning.WordsList14.WORD_LIST_SIZE_14;
+import static com.example.android.languagelearning.WordsList15.PROGRESS_MASTER_15;
+import static com.example.android.languagelearning.WordsList15.SHARED_PREFS_15;
+import static com.example.android.languagelearning.WordsList15.WORD_LIST_SIZE_15;
+import static com.example.android.languagelearning.WordsList2.PROGRESS_MASTER_2;
+import static com.example.android.languagelearning.WordsList2.SHARED_PREFS_2;
+import static com.example.android.languagelearning.WordsList2.WORD_LIST_SIZE_2;
+import static com.example.android.languagelearning.WordsList3.PROGRESS_MASTER_3;
+import static com.example.android.languagelearning.WordsList3.SHARED_PREFS_3;
+import static com.example.android.languagelearning.WordsList3.WORD_LIST_SIZE_3;
+import static com.example.android.languagelearning.WordsList4.PROGRESS_MASTER_4;
+import static com.example.android.languagelearning.WordsList4.SHARED_PREFS_4;
+import static com.example.android.languagelearning.WordsList4.WORD_LIST_SIZE_4;
+import static com.example.android.languagelearning.WordsList5.PROGRESS_MASTER_5;
+import static com.example.android.languagelearning.WordsList5.SHARED_PREFS_5;
+import static com.example.android.languagelearning.WordsList5.WORD_LIST_SIZE_5;
+import static com.example.android.languagelearning.WordsList6.PROGRESS_MASTER_6;
+import static com.example.android.languagelearning.WordsList6.SHARED_PREFS_6;
+import static com.example.android.languagelearning.WordsList6.WORD_LIST_SIZE_6;
+import static com.example.android.languagelearning.WordsList7.PROGRESS_MASTER_7;
+import static com.example.android.languagelearning.WordsList7.SHARED_PREFS_7;
+import static com.example.android.languagelearning.WordsList7.WORD_LIST_SIZE_7;
+import static com.example.android.languagelearning.WordsList8.PROGRESS_MASTER_8;
+import static com.example.android.languagelearning.WordsList8.SHARED_PREFS_8;
+import static com.example.android.languagelearning.WordsList8.WORD_LIST_SIZE_8;
+import static com.example.android.languagelearning.WordsList9.PROGRESS_MASTER_9;
+import static com.example.android.languagelearning.WordsList9.SHARED_PREFS_9;
+import static com.example.android.languagelearning.WordsList9.WORD_LIST_SIZE_9;
 
 public class MainActivity extends AppCompatActivity
 //        implements NavigationView.OnNavigationItemSelectedListener
@@ -44,7 +86,7 @@ public class MainActivity extends AppCompatActivity
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     // Shared Data
-  public   SharedPreferences getSharedDataFromFragment1 ;
+  public   SharedPreferences getSharedDataFromFragment1,getSharedDataFromFragment2,getSharedDataFromFragment3,getSharedDataFromFragment4,getSharedDataFromFragment5,getSharedDataFromFragment6,getSharedDataFromFragment7,getSharedDataFromFragment8,getSharedDataFromFragment9,getSharedDataFromFragment10,getSharedDataFromFragment11,getSharedDataFromFragment12,getSharedDataFromFragment13,getSharedDataFromFragment14,getSharedDataFromFragment15 ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +94,22 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         toolbarMain =  findViewById(R.id.toolbar);
         getSharedDataFromFragment1 = getSharedPreferences(SHARED_PREFS_1,MODE_PRIVATE);
+        getSharedDataFromFragment2 = getSharedPreferences(SHARED_PREFS_2,MODE_PRIVATE);
+        getSharedDataFromFragment3 = getSharedPreferences(SHARED_PREFS_3,MODE_PRIVATE);
+        getSharedDataFromFragment4 = getSharedPreferences(SHARED_PREFS_4,MODE_PRIVATE);
+        getSharedDataFromFragment5 = getSharedPreferences(SHARED_PREFS_5,MODE_PRIVATE);
+        getSharedDataFromFragment6 = getSharedPreferences(SHARED_PREFS_6,MODE_PRIVATE);
+        getSharedDataFromFragment7 = getSharedPreferences(SHARED_PREFS_7,MODE_PRIVATE);
+        getSharedDataFromFragment8 = getSharedPreferences(SHARED_PREFS_8,MODE_PRIVATE);
+        getSharedDataFromFragment9 = getSharedPreferences(SHARED_PREFS_9,MODE_PRIVATE);
+        getSharedDataFromFragment10 = getSharedPreferences(SHARED_PREFS_10,MODE_PRIVATE);
+        getSharedDataFromFragment11 = getSharedPreferences(SHARED_PREFS_11,MODE_PRIVATE);
+        getSharedDataFromFragment12 = getSharedPreferences(SHARED_PREFS_12,MODE_PRIVATE);
+        getSharedDataFromFragment13 = getSharedPreferences(SHARED_PREFS_13,MODE_PRIVATE);
+        getSharedDataFromFragment14 = getSharedPreferences(SHARED_PREFS_14,MODE_PRIVATE);
+        getSharedDataFromFragment15 = getSharedPreferences(SHARED_PREFS_15,MODE_PRIVATE);
+
+
 //        setSupportActionBar(toolbarMain);
 //
 //        drawerLayout = findViewById(R.id.drawer_layout_main);
@@ -78,20 +136,20 @@ public class MainActivity extends AppCompatActivity
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         topics.add(new Topics(2, "Level 1", getSharedDataFromFragment1.getInt(PROGRESS_MASTER_1,0)+" of "+getSharedDataFromFragment1.getInt(WORD_LIST_SIZE_1,0)+ "  words mastered",getSharedDataFromFragment1.getInt(PROGRESS_MASTER_1,0)));
-        topics.add(new Topics(3, "Level 2", "0 of 50  words mastered",0));
-        topics.add(new Topics(4, "Level 3", "0 of 50  words mastered",0));
-        topics.add(new Topics(5, "Level 4", "0 of 50  words mastered",0));
-        topics.add(new Topics(6, "Level 5", "0 of 50  words mastered",0));
-        topics.add(new Topics(7, "Level 6", "0 of 50  words mastered",0));
-        topics.add(new Topics(8, "Level 7", "0 of 50  words mastered",0));
-        topics.add(new Topics(9, "Level 8", "0 of 50  words mastered",0));
-        topics.add(new Topics(10, "Level 9", "0 of 50  words mastered",0));
-        topics.add(new Topics(11, "Level 10", "0 of 50  words mastered",0));
-        topics.add(new Topics(12, "Level 11", "0 of 50  words mastered",0));
-        topics.add(new Topics(13, "Level 12", "0 of 50  words mastered",0));
-        topics.add(new Topics(14, "Level 13", "0 of 50  words mastered",0));
-        topics.add(new Topics(15, "Level 14", "0 of 50  words mastered",0));
-        topics.add(new Topics(16, "Level 15", "0 of 50  words mastered",0));
+        topics.add(new Topics(3, "Level 2",getSharedDataFromFragment2.getInt(PROGRESS_MASTER_2,0)+" of "+getSharedDataFromFragment2.getInt(WORD_LIST_SIZE_2,0)+ "  words mastered",getSharedDataFromFragment2.getInt(PROGRESS_MASTER_2,0)));
+        topics.add(new Topics(4, "Level 3", getSharedDataFromFragment3.getInt(PROGRESS_MASTER_3,0)+" of "+getSharedDataFromFragment3.getInt(WORD_LIST_SIZE_3,0)+ "  words mastered",getSharedDataFromFragment3.getInt(PROGRESS_MASTER_3,0)));
+        topics.add(new Topics(5, "Level 4",getSharedDataFromFragment4.getInt(PROGRESS_MASTER_4,0)+" of "+getSharedDataFromFragment4.getInt(WORD_LIST_SIZE_4,0)+ "  words mastered",getSharedDataFromFragment4.getInt(PROGRESS_MASTER_4,0)));
+        topics.add(new Topics(6, "Level 5", getSharedDataFromFragment5.getInt(PROGRESS_MASTER_5,0)+" of "+getSharedDataFromFragment5.getInt(WORD_LIST_SIZE_5,0)+ "  words mastered",getSharedDataFromFragment5.getInt(PROGRESS_MASTER_5,0)));
+        topics.add(new Topics(7, "Level 6",getSharedDataFromFragment6.getInt(PROGRESS_MASTER_6,0)+" of "+getSharedDataFromFragment6.getInt(WORD_LIST_SIZE_6,0)+ "  words mastered",getSharedDataFromFragment6.getInt(PROGRESS_MASTER_6,0)));
+        topics.add(new Topics(8, "Level 7", getSharedDataFromFragment7.getInt(PROGRESS_MASTER_7,0)+" of "+getSharedDataFromFragment7.getInt(WORD_LIST_SIZE_7,0)+ "  words mastered",getSharedDataFromFragment7.getInt(PROGRESS_MASTER_7,0)));
+        topics.add(new Topics(9, "Level 8",getSharedDataFromFragment8.getInt(PROGRESS_MASTER_8,0)+" of "+getSharedDataFromFragment8.getInt(WORD_LIST_SIZE_8,0)+ "  words mastered",getSharedDataFromFragment8.getInt(PROGRESS_MASTER_8,0)));
+        topics.add(new Topics(10, "Level 9",getSharedDataFromFragment9.getInt(PROGRESS_MASTER_9,0)+" of "+getSharedDataFromFragment9.getInt(WORD_LIST_SIZE_9,0)+ "  words mastered",getSharedDataFromFragment9.getInt(PROGRESS_MASTER_9,0)));
+        topics.add(new Topics(11, "Level 10",getSharedDataFromFragment10.getInt(PROGRESS_MASTER_10,0)+" of "+getSharedDataFromFragment10.getInt(WORD_LIST_SIZE_10,0)+ "  words mastered",getSharedDataFromFragment10.getInt(PROGRESS_MASTER_10,0)));
+        topics.add(new Topics(12, "Level 11",getSharedDataFromFragment11.getInt(PROGRESS_MASTER_11,0)+" of "+getSharedDataFromFragment11.getInt(WORD_LIST_SIZE_11,0)+ "  words mastered",getSharedDataFromFragment11.getInt(PROGRESS_MASTER_11,0)));
+        topics.add(new Topics(13, "Level 12",getSharedDataFromFragment12.getInt(PROGRESS_MASTER_12,0)+" of "+getSharedDataFromFragment12.getInt(WORD_LIST_SIZE_12,0)+ "  words mastered",getSharedDataFromFragment12.getInt(PROGRESS_MASTER_12,0)));
+        topics.add(new Topics(14, "Level 13",getSharedDataFromFragment13.getInt(PROGRESS_MASTER_13,0)+" of "+getSharedDataFromFragment13.getInt(WORD_LIST_SIZE_13,0)+ "  words mastered",getSharedDataFromFragment13.getInt(PROGRESS_MASTER_13,0)));
+        topics.add(new Topics(15, "Level 14",getSharedDataFromFragment14.getInt(PROGRESS_MASTER_14,0)+" of "+getSharedDataFromFragment14.getInt(WORD_LIST_SIZE_14,0)+ "  words mastered",getSharedDataFromFragment14.getInt(PROGRESS_MASTER_14,0)));
+        topics.add(new Topics(16, "Level 15",getSharedDataFromFragment15.getInt(PROGRESS_MASTER_15,0)+" of "+getSharedDataFromFragment15.getInt(WORD_LIST_SIZE_15,0)+ "  words mastered",getSharedDataFromFragment15.getInt(PROGRESS_MASTER_15,0)));
         topicAdapter = new TopicAdapter(this, topics);
 
         topicAdapter.setOnItemClickListener(new TopicAdapter.OnItemClickListener() {

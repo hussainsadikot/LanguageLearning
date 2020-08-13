@@ -287,14 +287,6 @@ public class WordsList1 extends Fragment {
 
 
     }
-
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        loadData();
-        updateViewsBySharedPref();
-    }
-
     public void updateViewsBySharedPref(){
 //        int updateIndex = 0;
 //        for (int i =0; i<words.length; i++){
@@ -305,7 +297,7 @@ public class WordsList1 extends Fragment {
 //        }
         tvProgressMaster.setText(text_master_1);
         mGlobalWordNumber=word_index_1;
-       tvProgressReview.setText(text_reviewing_1);
+        tvProgressReview.setText(text_reviewing_1);
         tvProgressLearning.setText(text_learning_1);
         for(int i =0 ; i<words.length; i++){
             if(words[i].equals(text_word_1)){
@@ -319,8 +311,17 @@ public class WordsList1 extends Fragment {
         progressBarMaster.setProgress((progress_master_1));
         progressBarReview.setProgress((progress_reviewing_1) );
         progressBarLearning.setProgress((progress_learning_1));
-        Toast.makeText(getActivity(), "data updated", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(getActivity(), "data updated", Toast.LENGTH_SHORT).show();
     }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        loadData();
+        updateViewsBySharedPref();
+    }
+
+
 //
 //    private void revealNextWord() {
 //        textView_definition.setVisibility(View.GONE);
