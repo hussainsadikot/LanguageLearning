@@ -26,6 +26,10 @@ import com.google.android.material.navigation.NavigationView;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.example.android.languagelearning.WordsList1.PROGRESS_MASTER_1;
+import static com.example.android.languagelearning.WordsList1.SHARED_PREFS_1;
+import static com.example.android.languagelearning.WordsList1.WORD_LIST_SIZE_1;
+
 public class MainActivity extends AppCompatActivity
 //        implements NavigationView.OnNavigationItemSelectedListener
 {
@@ -39,13 +43,15 @@ public class MainActivity extends AppCompatActivity
 
     DrawerLayout drawerLayout;
     NavigationView navigationView;
-
+    // Shared Data
+  public   SharedPreferences getSharedDataFromFragment1 ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         toolbarMain =  findViewById(R.id.toolbar);
+        getSharedDataFromFragment1 = getSharedPreferences(SHARED_PREFS_1,MODE_PRIVATE);
 //        setSupportActionBar(toolbarMain);
 //
 //        drawerLayout = findViewById(R.id.drawer_layout_main);
@@ -60,27 +66,32 @@ public class MainActivity extends AppCompatActivity
 //        navigationViewMain.setNavigationItemSelectedListener(this);
 
 //        prefs = getSharedPreferences("com.mycompany.myAppName", MODE_PRIVATE);
-//        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-//        String desiredPreference =  sharedPreferences.getString("PROGRESS_MASTER_1", "progress_master_1");
+
+
+
+
+//        Integer wordList_1_progress_master_1 =
+//        int wordList_size_1 =;
+//        String WordList_1_progress_master_1 = Integer.toString(wordList_1_progress_master_1);
         recyclerView = findViewById(R.id.recycler_view);
         topics = new ArrayList<>();
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        topics.add(new Topics(2, "Level 1", "0 of 50  words mastered"));
-        topics.add(new Topics(3, "Level 2", "0 of 50  words mastered"));
-        topics.add(new Topics(4, "Level 3", "0 of 50  words mastered"));
-        topics.add(new Topics(5, "Level 4", "0 of 50  words mastered"));
-        topics.add(new Topics(6, "Level 5", "0 of 50  words mastered"));
-        topics.add(new Topics(7, "Level 6", "0 of 50  words mastered"));
-        topics.add(new Topics(8, "Level 7", "0 of 50  words mastered"));
-        topics.add(new Topics(9, "Level 8", "0 of 50  words mastered"));
-        topics.add(new Topics(10, "Level 9", "0 of 50  words mastered"));
-        topics.add(new Topics(11, "Level 10", "0 of 50  words mastered"));
-        topics.add(new Topics(12, "Level 11", "0 of 50  words mastered"));
-        topics.add(new Topics(13, "Level 12", "0 of 50  words mastered"));
-        topics.add(new Topics(14, "Level 13", "0 of 50  words mastered"));
-        topics.add(new Topics(15, "Level 14", "0 of 50  words mastered"));
-        topics.add(new Topics(16, "Level 15", "0 of 50  words mastered"));
+        topics.add(new Topics(2, "Level 1", getSharedDataFromFragment1.getInt(PROGRESS_MASTER_1,0)+" of "+getSharedDataFromFragment1.getInt(WORD_LIST_SIZE_1,0)+ "  words mastered",getSharedDataFromFragment1.getInt(PROGRESS_MASTER_1,0)));
+        topics.add(new Topics(3, "Level 2", "0 of 50  words mastered",0));
+        topics.add(new Topics(4, "Level 3", "0 of 50  words mastered",0));
+        topics.add(new Topics(5, "Level 4", "0 of 50  words mastered",0));
+        topics.add(new Topics(6, "Level 5", "0 of 50  words mastered",0));
+        topics.add(new Topics(7, "Level 6", "0 of 50  words mastered",0));
+        topics.add(new Topics(8, "Level 7", "0 of 50  words mastered",0));
+        topics.add(new Topics(9, "Level 8", "0 of 50  words mastered",0));
+        topics.add(new Topics(10, "Level 9", "0 of 50  words mastered",0));
+        topics.add(new Topics(11, "Level 10", "0 of 50  words mastered",0));
+        topics.add(new Topics(12, "Level 11", "0 of 50  words mastered",0));
+        topics.add(new Topics(13, "Level 12", "0 of 50  words mastered",0));
+        topics.add(new Topics(14, "Level 13", "0 of 50  words mastered",0));
+        topics.add(new Topics(15, "Level 14", "0 of 50  words mastered",0));
+        topics.add(new Topics(16, "Level 15", "0 of 50  words mastered",0));
         topicAdapter = new TopicAdapter(this, topics);
 
         topicAdapter.setOnItemClickListener(new TopicAdapter.OnItemClickListener() {

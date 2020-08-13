@@ -248,7 +248,10 @@ public class Main2Activity extends AppCompatActivity
 
     @Override
     public void onBackPressed() {
+
         super.onBackPressed();
+        startActivity(new Intent(Main2Activity.this, MainActivity.class));
+        finish();
 //        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
 //            drawerLayout.closeDrawer(GravityCompat.START);
 //        } else {

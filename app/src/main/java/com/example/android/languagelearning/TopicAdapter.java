@@ -78,7 +78,7 @@ class TopicAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
             ((TopicViewHolder) holder).textViewTitle.setText(topics1.getTitle());
             ((TopicViewHolder) holder).textViewProgress.setText(topics1.getProgressText());
-            ((TopicViewHolder) holder).progressBar.getProgress();
+            ((TopicViewHolder) holder).progressBar.setProgress(topics1.getMasterProgress());
         }
 
 //        else if (holder instanceof CreateAccountViewHolder) {

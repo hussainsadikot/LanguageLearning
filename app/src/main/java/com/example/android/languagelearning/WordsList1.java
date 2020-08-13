@@ -70,8 +70,10 @@ public class WordsList1 extends Fragment {
     public static final String PROGRESS_LEARNING_1 = "progress_learning_1";
     public static final String TEXT_REVIEWING_1 = "text_reviewing_1";
     public static final String PROGRESS_REVIEWING_1 = "progress_reviewing_1";
-    public static final String TEXT_WORD1_1 = "text_wod_1";
+    public static final String TEXT_WORD1_1 = "text_word_1";
     public static final String TEXT_DEFINITION_1 = "text_def_1";
+    public static final String WORD_LIST_SIZE_1 = "word_list_size_1";
+    public static final String WORD_INDEX_1 = "word_index_1";
 // shared variable default loading
    private   String text_master_1="";
     public Integer progress_master_1=0;
@@ -81,18 +83,18 @@ public class WordsList1 extends Fragment {
     public  Integer progress_reviewing_1=0;
     public  String text_word_1="";
     public  String text_def_1="";
+    public int word_list_size_1 =0;
+    public int word_index_1;
 
+// supportive variables
 
     private Map<String, String> map = new HashMap<>();
-
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         // Inflate the layout for this fragment
-       String[] words1= getActivity().getResources().getStringArray(R.array.Level_I_Earth_Sky_and_Water__Array_List_1);
+       String[] words1= Objects.requireNonNull(getActivity()).getResources().getStringArray(R.array.Level_I_Earth_Sky_and_Water__Array_List_1);
        String[] words_definition1= getActivity().getResources().getStringArray(R.array.Definition_Array_List_1);
         words = Arrays.copyOf(words1, words1.length);
         words_definition = Arrays.copyOf(words_definition1, words_definition1.length);
@@ -156,26 +158,13 @@ public class WordsList1 extends Fragment {
             public void onClick(View view) {
                 String iknowword = textView_title_back.getText().toString();
                 String cur_def =textView_definition.getText().toString();
+
 //                findIndex(globalListOfWordAndDefinition.globalWord,iknowword);
                 ChangeTag(iknowword);
 //                revealNextWord();
 
 
 //                Toast.makeText(MainActivity.this, "You know this word Fantastic", Toast.LENGTH_SHORT).show();
-                String cur_tv_progress_master="";
-                String cur_tv_progress_reviewing="";
-                String cur_tv_progress_learning="";
-                Integer cur_progress_master=0;
-                Integer cur_progress_reviewing=0;
-                Integer cur_progress_learning=0;
-               cur_tv_progress_master = tvProgressMaster.getText().toString();
-               cur_tv_progress_reviewing = tvProgressReview.getText().toString();
-                cur_tv_progress_learning = tvProgressLearning.getText().toString();
-                cur_progress_master =progressBarMaster.getProgress();
-                cur_progress_reviewing =progressBarReview.getProgress();
-                cur_progress_learning =progressBarLearning.getProgress();
-
-//                main2Activity.getDataFromFragment1(iknowword,cur_def,cur_tv_progress_master,cur_tv_progress_reviewing,cur_tv_progress_learning,cur_progress_master,cur_progress_reviewing,cur_progress_learning);
                 updateNextWordfromGlobal();
 
                 flipReverse();
@@ -187,24 +176,10 @@ public class WordsList1 extends Fragment {
             public void onClick(View view) {
                 String idontknowword = textView_title_back.getText().toString();
                 String cur_def =textView_definition.getText().toString();
+
                 ChangeTagForIDont(idontknowword);
 //                Toast.makeText(MainActivity.this, "You don't know this word, cool", Toast.LENGTH_SHORT).show();
 //                revealNextWord();
-                String cur_tv_progress_master="";
-                String cur_tv_progress_reviewing="";
-                String cur_tv_progress_learning="";
-                Integer cur_progress_master=0;
-                Integer cur_progress_reviewing=0;
-                Integer cur_progress_learning=0;
-                cur_tv_progress_master = tvProgressMaster.getText().toString();
-                cur_tv_progress_reviewing = tvProgressReview.getText().toString();
-                cur_tv_progress_learning = tvProgressLearning.getText().toString();
-                cur_progress_master =progressBarMaster.getProgress();
-                cur_progress_reviewing =progressBarReview.getProgress();
-                cur_progress_learning =progressBarLearning.getProgress();
-
-//                main2Activity.getDataFromFragment1(idontknowword,cur_def,cur_tv_progress_master,cur_tv_progress_reviewing,cur_tv_progress_learning,cur_progress_master,cur_progress_reviewing,cur_progress_learning);
-
                 updateNextWordfromGlobal();
                 flipReverse();
                 saveData();
@@ -212,42 +187,61 @@ public class WordsList1 extends Fragment {
         });
 
 //        ((Main2Activity) Objects.requireNonNull(getActivity())).updateNextWordfromGlobal();
-        updateNextWordfromGlobal();
+                   updateNextWordfromGlobal();
 
         //Load data and update views values according to saved load data
 //        saveData();
-//        loadData();
-//        updateViewsBySharedPref();
+        loadData();
+        updateViewsBySharedPref();
+
         return view;
     }
 
     private void saveData() {
-        SharedPreferences sharedPreferences= Objects.requireNonNull(this.getActivity()).getSharedPreferences("SHARED_PREFS_1", Context.MODE_PRIVATE);
+        SharedPreferences sharedPreferences= Objects.requireNonNull(this.getActivity()).getSharedPreferences(SHARED_PREFS_1, Context.MODE_PRIVATE);
      SharedPreferences.Editor editor=  sharedPreferences.edit();
      editor.putString(TEXT_MASTER_1,tvProgressMaster.getText().toString());
         editor.putString(TEXT_REVIEWING_1,tvProgressReview.getText().toString());
         editor.putString(TEXT_LEARNING_1,tvProgressLearning.getText().toString());
-        editor.putString(TEXT_WORD1_1,textView_title_back.getText().toString());
-        editor.putString(TEXT_DEFINITION_1,textView_definition.getText().toString());
+        for (int i=0;i<words.length;i++){
+           String word_string_for_index = textView_title_back.getText().toString();
+            if (words[i].equals(word_string_for_index)){
+                editor.putInt(WORD_INDEX_1,i);
+            }
+        }
+
+        String text_word_to_store= textView_title_back.getText().toString();
+        String text_word_def_to_store= textView_definition.getText().toString();
+        editor.putString(TEXT_WORD1_1, text_word_to_store);
+        editor.putString(TEXT_DEFINITION_1,text_word_def_to_store);
         editor.putInt(PROGRESS_MASTER_1,progressBarMaster.getProgress());
         editor.putInt(PROGRESS_LEARNING_1,progressBarLearning.getProgress());
         editor.putInt(PROGRESS_REVIEWING_1,progressBarReview.getProgress());
+        editor.putInt(WORD_LIST_SIZE_1,words.length);
+
         editor.apply();
-        Toast.makeText(getActivity(), "Data Saved", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(getActivity(), "Data Saved", Toast.LENGTH_SHORT).show();
 //        loadData();
     }
     private void loadData() {
         SharedPreferences sharedPreferences= Objects.requireNonNull(getActivity()).getSharedPreferences(SHARED_PREFS_1, Context.MODE_PRIVATE);
-
+        word_index_1=sharedPreferences.getInt(WORD_INDEX_1,0);
          text_master_1=sharedPreferences.getString(TEXT_MASTER_1,tvProgressMaster.getText().toString());
         progress_master_1=sharedPreferences.getInt(PROGRESS_MASTER_1,progressBarMaster.getProgress());
         text_learning_1=sharedPreferences.getString(TEXT_LEARNING_1,tvProgressLearning.getText().toString());
       progress_learning_1=sharedPreferences.getInt(PROGRESS_LEARNING_1,progressBarLearning.getProgress());
         text_reviewing_1=sharedPreferences.getString(TEXT_REVIEWING_1,tvProgressReview.getText().toString());
         progress_reviewing_1=sharedPreferences.getInt(PROGRESS_REVIEWING_1,progressBarReview.getProgress());
-       text_word_1=sharedPreferences.getString(TEXT_WORD1_1,textView_title_back.getText().toString());
-        text_def_1=sharedPreferences.getString(TEXT_DEFINITION_1,textView_definition.getText().toString());
-        Toast.makeText(getActivity(), "data loaded", Toast.LENGTH_SHORT).show();
+
+        text_word_1=sharedPreferences.getString(TEXT_WORD1_1,words[mGlobalWordNumber]);
+
+
+
+
+        text_def_1=sharedPreferences.getString(TEXT_DEFINITION_1,words_definition[mGlobalWordNumber]);
+        word_list_size_1= sharedPreferences.getInt(WORD_LIST_SIZE_1,words.length);
+
+//        Toast.makeText(getActivity(), "data loaded", Toast.LENGTH_SHORT).show();
 
 
     }
@@ -260,12 +254,20 @@ public class WordsList1 extends Fragment {
     }
 
     public void updateViewsBySharedPref(){
-
+//        int updateIndex = 0;
+//        for (int i =0; i<words.length; i++){
+//            if(text_word_1.equals(words[i])){
+//                updateIndex = i;
+////                return;
+//            }
+//        }
         tvProgressMaster.setText(text_master_1);
-
+//        mGlobalWordNumber=word_index_1;
        tvProgressReview.setText(text_reviewing_1);
         tvProgressLearning.setText(text_learning_1);
+        textView_title_front.setText(text_word_1);
         textView_title_back.setText(text_word_1);
+
         textView_definition.setText(text_def_1);
         progressBarMaster.setProgress((progress_master_1));
         progressBarReview.setProgress((progress_reviewing_1) );
@@ -347,9 +349,22 @@ public class WordsList1 extends Fragment {
 
 
     private void updateNextWordfromGlobal() {
-
-
-        if (mGlobalWordNumber == words.length) {
+//        if(mGlobalWordNumber==word_index_1){
+//            textView_title_front.setText(words[mGlobalWordNumber]);
+//            textView_title_back.setText(words[mGlobalWordNumber]);
+//            textView_definition.setText(words_definition[mGlobalWordNumber]);
+//            mGlobalWordNumber++;
+//            return;
+//        }
+        if(mGlobalWordNumber!=word_index_1){
+        mGlobalWordNumber=word_index_1;
+        ++mGlobalWordNumber;
+            textView_title_front.setText(words[mGlobalWordNumber]);
+            textView_title_back.setText(words[mGlobalWordNumber]);
+            textView_definition.setText(words_definition[mGlobalWordNumber]);
+            word_index_1 =mGlobalWordNumber;
+        }
+        else if (mGlobalWordNumber == words.length) {
             mGlobalWordNumber = 0;
             textView_title_front.setText(words[mGlobalWordNumber]);
             textView_title_back.setText(words[mGlobalWordNumber]);
@@ -360,15 +375,26 @@ public class WordsList1 extends Fragment {
 //            int upperbound = words.length;
 //            //generate random values from 0-12
 //            int int_random = rand.nextInt(upperbound);
+
+
             textView_title_front.setText(words[mGlobalWordNumber]);
             textView_title_back.setText(words[mGlobalWordNumber]);
             textView_definition.setText(words_definition[mGlobalWordNumber]);
         }
 
 
-        ++mGlobalWordNumber;
+        mGlobalWordNumber++;
+        word_index_1++ ;
 
     }
+
+//    @Override
+//    public void onStop() {
+//        saveData();
+//        loadData();
+//        updateViewsBySharedPref();
+//        super.onStop();
+//    }
 
     private void ChangeTagForIDont(String idontknowword) {
         if ((TextUtils.equals(map.get(idontknowword), global))) {
